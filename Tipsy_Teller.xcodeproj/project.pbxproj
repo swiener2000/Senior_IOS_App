@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FDF82CFC836EDFD0A7BDC12 /* Pods_Tipsy_Teller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82DD8609B353F7E21F06B6F /* Pods_Tipsy_Teller.framework */; };
 		EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B1288279B4F2E0057D162 /* AppDelegate.swift */; };
 		EC1B128B279B4F2E0057D162 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B128A279B4F2E0057D162 /* SceneDelegate.swift */; };
 		EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B128C279B4F2E0057D162 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09B9DC943C0FA791D9A912C2 /* Pods-Tipsy_Teller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tipsy_Teller.debug.xcconfig"; path = "Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller.debug.xcconfig"; sourceTree = "<group>"; };
+		5C82F1509B764760B53E9991 /* Pods-Tipsy_Teller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tipsy_Teller.release.xcconfig"; path = "Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller.release.xcconfig"; sourceTree = "<group>"; };
+		C82DD8609B353F7E21F06B6F /* Pods_Tipsy_Teller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tipsy_Teller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1B1285279B4F2E0057D162 /* Tipsy_Teller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy_Teller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1B1288279B4F2E0057D162 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC1B128A279B4F2E0057D162 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDF82CFC836EDFD0A7BDC12 /* Pods_Tipsy_Teller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CF891CD5EC0E9EC431D1485 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09B9DC943C0FA791D9A912C2 /* Pods-Tipsy_Teller.debug.xcconfig */,
+				5C82F1509B764760B53E9991 /* Pods-Tipsy_Teller.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EC1B127C279B4F2E0057D162 = {
 			isa = PBXGroup;
 			children = (
 				EC1B1287279B4F2E0057D162 /* Tipsy_Teller */,
 				EC1B1286279B4F2E0057D162 /* Products */,
+				7CF891CD5EC0E9EC431D1485 /* Pods */,
+				FE214A46D05E8CBA7AA6D923 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = Tipsy_Teller;
 			sourceTree = "<group>";
 		};
+		FE214A46D05E8CBA7AA6D923 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C82DD8609B353F7E21F06B6F /* Pods_Tipsy_Teller.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC1B1299279B4F350057D162 /* Build configuration list for PBXNativeTarget "Tipsy_Teller" */;
 			buildPhases = (
+				393F6E45ED2DFA8C223DE350 /* [CP] Check Pods Manifest.lock */,
 				EC1B1281279B4F2E0057D162 /* Sources */,
 				EC1B1282279B4F2E0057D162 /* Frameworks */,
 				EC1B1283279B4F2E0057D162 /* Resources */,
+				6BC7F24DCA0CBB2856C12F41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		393F6E45ED2DFA8C223DE350 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tipsy_Teller-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BC7F24DCA0CBB2856C12F41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC1B1281279B4F2E0057D162 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		EC1B129A279B4F350057D162 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B9DC943C0FA791D9A912C2 /* Pods-Tipsy_Teller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		EC1B129B279B4F350057D162 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C82F1509B764760B53E9991 /* Pods-Tipsy_Teller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

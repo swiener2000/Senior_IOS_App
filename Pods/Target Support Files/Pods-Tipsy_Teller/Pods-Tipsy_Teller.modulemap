@@ -1,0 +1,6 @@
+framework module Pods_Tipsy_Teller {
+  umbrella header "Pods-Tipsy_Teller-umbrella.h"
+
+  export *
+  module * { export * }
+}
