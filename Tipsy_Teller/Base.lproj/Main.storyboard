@@ -33,6 +33,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                <connections>
+                                    <action selector="signin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGS-IR-Pf4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-vo-AZY">
                                 <rect key="frame" x="20" y="364" width="180" height="34"/>
@@ -64,6 +67,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="vW2-3R-WRs">
                                 <rect key="frame" x="21" y="516" width="378" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cud-3f-J8G"/>
+                                </connections>
                             </slider>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oev-jm-tqO">
                                 <rect key="frame" x="23" y="713" width="374" height="34"/>
@@ -76,6 +82,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZN-CS-1oI"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-Ml-3re">
                                 <rect key="frame" x="0.0" y="543" width="414" height="103"/>
@@ -91,6 +100,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="GenderSignup" destination="yGJ-qn-XM3" id="Rh2-Th-jCG"/>
+                        <outlet property="WeightLabel" destination="qOj-vE-QQp" id="jQE-Wm-hd3"/>
+                        <outlet property="WeightSignup" destination="vW2-3R-WRs" id="RRU-dV-jWA"/>
+                        <outlet property="txtFirstNameSignup" destination="s3e-vo-AZY" id="CA7-h4-2vh"/>
+                        <outlet property="txtLastNameSignup" destination="uh0-0p-23S" id="zbc-um-tLb"/>
+                        <outlet property="txtPasswordSignin" destination="CTg-rp-TNa" id="ZsD-hZ-29T"/>
+                        <outlet property="txtPasswordSignup" destination="oev-jm-tqO" id="iq1-io-t5z"/>
+                        <outlet property="txtUsernameSignin" destination="aZg-Wt-XZB" id="eCB-c9-cXA"/>
+                        <outlet property="txtUsernameSignup" destination="XzJ-6U-Va0" id="rzT-Xq-8As"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,21 +167,33 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="wine_cover" imagePlacement="top" title="Wine"/>
+                                                        <connections>
+                                                            <action selector="wineButton:" destination="pJi-hu-EZd" eventType="touchUpInside" id="4Wx-bK-V0o"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-oz-jHW">
                                                         <rect key="frame" x="94" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="beer_cover" imagePlacement="top" title="Beer"/>
+                                                        <connections>
+                                                            <action selector="beerButton:" destination="pJi-hu-EZd" eventType="touchUpInside" id="l52-G5-E0X"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-nD-9wa">
                                                         <rect key="frame" x="188" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="liquor_cover" imagePlacement="top" title="Liquor"/>
+                                                        <connections>
+                                                            <action selector="liquorButton:" destination="pJi-hu-EZd" eventType="touchUpInside" id="soy-v3-4aw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aay-zM-HAH">
                                                         <rect key="frame" x="282" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="malt_cover" imagePlacement="top" title="Malt"/>
+                                                        <connections>
+                                                            <action selector="maltButton:" destination="pJi-hu-EZd" eventType="touchUpInside" id="AQk-JW-XAY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -172,21 +204,33 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="wine_cover" imagePlacement="top" title="size 1"/>
+                                                        <connections>
+                                                            <action selector="size1Bac:" destination="pJi-hu-EZd" eventType="touchUpInside" id="kPE-8d-aBz"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-9t-1FJ">
                                                         <rect key="frame" x="94" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="beer_cover" imagePlacement="top" title="Size 2"/>
+                                                        <connections>
+                                                            <action selector="size2Bac:" destination="pJi-hu-EZd" eventType="touchUpInside" id="qqa-CQ-Jnm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23r-jN-JOy">
                                                         <rect key="frame" x="188" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="liquor_cover" imagePlacement="top" title="size 3"/>
+                                                        <connections>
+                                                            <action selector="size3Bac:" destination="pJi-hu-EZd" eventType="touchUpInside" id="6Hz-2A-AYC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C06-dl-J32">
                                                         <rect key="frame" x="282" y="0.0" width="74" height="81"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" image="malt_cover" imagePlacement="top" title="size 4"/>
+                                                        <connections>
+                                                            <action selector="size4Bac:" destination="pJi-hu-EZd" eventType="touchUpInside" id="jVM-fl-p18"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -203,11 +247,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="178" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                                        <connections>
+                                                            <action selector="startStopTapped:" destination="pJi-hu-EZd" eventType="touchUpInside" id="Wi3-zE-hsV"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-hZ-lv4">
                                                         <rect key="frame" x="178" y="0.0" width="178" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                                        <connections>
+                                                            <action selector="resetTapped:" destination="pJi-hu-EZd" eventType="touchUpInside" id="LLn-yM-mAJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -221,6 +271,23 @@
                         <viewLayoutGuide key="safeArea" id="3Ah-Ei-nVT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="BACLabel" destination="O3f-o5-WjI" id="5A7-fE-ejE"/>
+                        <outlet property="TimerLabel" destination="fqq-wY-ew4" id="2as-3E-kWt"/>
+                        <outlet property="beerButton" destination="eHf-oz-jHW" id="z7Q-gb-v4b"/>
+                        <outlet property="genderLabel" destination="bGk-ey-nzb" id="3Wr-xi-tdQ"/>
+                        <outlet property="liquorButton" destination="qgM-nD-9wa" id="6G6-eh-g41"/>
+                        <outlet property="maltButton" destination="aay-zM-HAH" id="2jP-Y6-aXj"/>
+                        <outlet property="profileLabel" destination="8Ka-Uw-1re" id="qrc-Uh-MaQ"/>
+                        <outlet property="resetButton" destination="Tml-hZ-lv4" id="LfR-z1-Jvt"/>
+                        <outlet property="size1Button" destination="YhN-WD-1XF" id="1Hj-0T-r3i"/>
+                        <outlet property="size2Button" destination="ZmE-9t-1FJ" id="Kqw-ry-F9J"/>
+                        <outlet property="size3Button" destination="23r-jN-JOy" id="7DR-Qw-pj9"/>
+                        <outlet property="size4Button" destination="C06-dl-J32" id="VxS-Oe-qYo"/>
+                        <outlet property="startStopButton" destination="ba0-w0-Zpl" id="b9C-gK-UNv"/>
+                        <outlet property="weightLabel" destination="v12-wx-bLW" id="kB5-cL-xxO"/>
+                        <outlet property="wineButton" destination="ss3-mT-YMb" id="OvY-Bi-O7D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meb-Uy-evw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
