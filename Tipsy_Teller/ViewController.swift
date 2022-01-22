@@ -40,7 +40,6 @@ class ViewController: UIViewController {
               (user: PFUser?, error: Error?) -> Void in
               if user != nil {
                   print("login successful")
-                  
               } else {
                 print("login unsuccessful")
               }

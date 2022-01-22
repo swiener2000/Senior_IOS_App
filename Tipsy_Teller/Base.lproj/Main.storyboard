@@ -35,6 +35,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
                                 <connections>
                                     <action selector="signin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGS-IR-Pf4"/>
+                                    <segue destination="pJi-hu-EZd" kind="show" id="cia-o7-d1f"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-vo-AZY">
@@ -84,6 +85,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                 <connections>
                                     <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZN-CS-1oI"/>
+                                    <segue destination="pJi-hu-EZd" kind="show" id="xJE-LQ-jXw"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-Ml-3re">
@@ -119,9 +121,9 @@
         <!--Drink View Controller-->
         <scene sceneID="lu8-zv-oxO">
             <objects>
-                <viewController id="pJi-hu-EZd" customClass="DrinkViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrinkViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pJi-hu-EZd" customClass="DrinkViewController" customModule="Tipsy_Teller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RoS-Xi-9OV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAR-rv-6o7">
@@ -271,6 +273,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ah-Ei-nVT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9XH-vw-myj"/>
                     <connections>
                         <outlet property="BACLabel" destination="O3f-o5-WjI" id="5A7-fE-ejE"/>
                         <outlet property="TimerLabel" destination="fqq-wY-ew4" id="2as-3E-kWt"/>
@@ -294,6 +297,9 @@
             <point key="canvasLocation" x="807" y="135"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xJE-LQ-jXw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="beer_cover" width="50" height="50"/>
         <image name="liquor_cover" width="50" height="50"/>

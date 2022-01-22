@@ -101,7 +101,14 @@ class DrinkViewController: UIViewController {
         let lastname = PFUser.current()?["Last_Name"] as? String
         let gender = PFUser.current()?["Gender"] as? Int
         let weight = PFUser.current()?["Weight"] as? Double
-        self.profileLabel.text = "\(firstname!) \(lastname!)'s Profile"
+        if firstname != nil, lastname != nil {
+            let first = firstname
+            let last = lastname
+            self.profileLabel.text = "\(first!) \(last!)'s Profile"
+        } else {
+            print("No user found")
+        }
+        
         if gender == 0 {
             self.genderLabel.text = "Gender: Female"
             r = 0.55
