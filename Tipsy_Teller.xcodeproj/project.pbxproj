@@ -14,6 +14,7 @@
 		EC1B1290279B4F2E0057D162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B128E279B4F2E0057D162 /* Main.storyboard */; };
 		EC1B1292279B4F350057D162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1291279B4F350057D162 /* Assets.xcassets */; };
 		EC1B1295279B4F350057D162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1293279B4F350057D162 /* LaunchScreen.storyboard */; };
+		EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EC1B1291279B4F350057D162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC1B1294279B4F350057D162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC1B1296279B4F350057D162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				09B9DC943C0FA791D9A912C2 /* Pods-Tipsy_Teller.debug.xcconfig */,
 				5C82F1509B764760B53E9991 /* Pods-Tipsy_Teller.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +81,7 @@
 				EC1B1291279B4F350057D162 /* Assets.xcassets */,
 				EC1B1293279B4F350057D162 /* LaunchScreen.storyboard */,
 				EC1B1296279B4F350057D162 /* Info.plist */,
+				EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */,
 			);
 			path = Tipsy_Teller;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 				EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */,
 				EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */,
 				EC1B128B279B4F2E0057D162 /* SceneDelegate.swift in Sources */,
+				EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
