@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "liquor_cover.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
