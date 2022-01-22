@@ -35,7 +35,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
                                 <connections>
                                     <action selector="signin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGS-IR-Pf4"/>
-                                    <segue destination="pJi-hu-EZd" kind="show" id="cia-o7-d1f"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-vo-AZY">
@@ -85,7 +84,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                 <connections>
                                     <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZN-CS-1oI"/>
-                                    <segue destination="pJi-hu-EZd" kind="show" id="xJE-LQ-jXw"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-Ml-3re">
@@ -123,7 +121,7 @@
             <objects>
                 <viewController storyboardIdentifier="DrinkViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pJi-hu-EZd" customClass="DrinkViewController" customModule="Tipsy_Teller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RoS-Xi-9OV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAR-rv-6o7">
@@ -275,21 +273,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="9XH-vw-myj"/>
                     <connections>
-                        <outlet property="BACLabel" destination="O3f-o5-WjI" id="5A7-fE-ejE"/>
-                        <outlet property="TimerLabel" destination="fqq-wY-ew4" id="2as-3E-kWt"/>
-                        <outlet property="beerButton" destination="eHf-oz-jHW" id="z7Q-gb-v4b"/>
-                        <outlet property="genderLabel" destination="bGk-ey-nzb" id="3Wr-xi-tdQ"/>
-                        <outlet property="liquorButton" destination="qgM-nD-9wa" id="6G6-eh-g41"/>
-                        <outlet property="maltButton" destination="aay-zM-HAH" id="2jP-Y6-aXj"/>
-                        <outlet property="profileLabel" destination="8Ka-Uw-1re" id="qrc-Uh-MaQ"/>
-                        <outlet property="resetButton" destination="Tml-hZ-lv4" id="LfR-z1-Jvt"/>
-                        <outlet property="size1Button" destination="YhN-WD-1XF" id="1Hj-0T-r3i"/>
-                        <outlet property="size2Button" destination="ZmE-9t-1FJ" id="Kqw-ry-F9J"/>
-                        <outlet property="size3Button" destination="23r-jN-JOy" id="7DR-Qw-pj9"/>
-                        <outlet property="size4Button" destination="C06-dl-J32" id="VxS-Oe-qYo"/>
-                        <outlet property="startStopButton" destination="ba0-w0-Zpl" id="b9C-gK-UNv"/>
-                        <outlet property="weightLabel" destination="v12-wx-bLW" id="kB5-cL-xxO"/>
-                        <outlet property="wineButton" destination="ss3-mT-YMb" id="OvY-Bi-O7D"/>
+                        <outlet property="BACLabel" destination="O3f-o5-WjI" id="HMp-N8-9KY"/>
+                        <outlet property="TimerLabel" destination="fqq-wY-ew4" id="QEJ-vw-WPM"/>
+                        <outlet property="beerButton" destination="eHf-oz-jHW" id="rjR-qR-34s"/>
+                        <outlet property="genderLabel" destination="bGk-ey-nzb" id="60k-P2-X7k"/>
+                        <outlet property="liquorButton" destination="qgM-nD-9wa" id="dZs-kV-fte"/>
+                        <outlet property="maltButton" destination="aay-zM-HAH" id="iGe-ml-kFw"/>
+                        <outlet property="profileLabel" destination="8Ka-Uw-1re" id="avM-N0-oHw"/>
+                        <outlet property="resetButton" destination="Tml-hZ-lv4" id="Pzt-G2-cnz"/>
+                        <outlet property="size1Button" destination="YhN-WD-1XF" id="gYY-ig-uxh"/>
+                        <outlet property="size2Button" destination="ZmE-9t-1FJ" id="K2s-m4-9NO"/>
+                        <outlet property="size3Button" destination="23r-jN-JOy" id="gj8-dA-LdW"/>
+                        <outlet property="size4Button" destination="C06-dl-J32" id="NKd-uV-ouB"/>
+                        <outlet property="startStopButton" destination="ba0-w0-Zpl" id="f2S-ut-NBk"/>
+                        <outlet property="weightLabel" destination="v12-wx-bLW" id="gyH-LD-rRh"/>
+                        <outlet property="wineButton" destination="ss3-mT-YMb" id="WSi-BH-tI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meb-Uy-evw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,9 +295,6 @@
             <point key="canvasLocation" x="807" y="135"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xJE-LQ-jXw"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="beer_cover" width="50" height="50"/>
         <image name="liquor_cover" width="50" height="50"/>

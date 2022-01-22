@@ -40,6 +40,8 @@ class ViewController: UIViewController {
               (user: PFUser?, error: Error?) -> Void in
               if user != nil {
                   print("login successful")
+                  let  myViewController = self.storyboard?.instantiateViewController(withIdentifier: "DrinkViewController") as! DrinkViewController
+                  self.present(myViewController, animated: true)
               } else {
                 print("login unsuccessful")
               }
@@ -59,6 +61,8 @@ class ViewController: UIViewController {
                     print("sign up unsuccessful")
                 } else {
                     print("Account has been successfully created")
+                    let  myViewController = self.storyboard?.instantiateViewController(withIdentifier: "DrinkViewController") as! DrinkViewController
+                    self.present(myViewController, animated: true)
                 }
             }
         }
