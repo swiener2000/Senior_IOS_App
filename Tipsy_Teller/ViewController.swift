@@ -44,6 +44,13 @@ class ViewController: UIViewController {
                   self.present(myViewController, animated: true)
               } else {
                 print("login unsuccessful")
+                  let alert = UIAlertController(title: "Username or Password Incorrect", message: "Username and password combination does not exist, please try again", preferredStyle: .alert)
+                          
+                          alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { (_) in
+                              
+                          }))
+                          
+                          self.present(alert, animated: true, completion: nil)
               }
             }
         }
@@ -59,6 +66,13 @@ class ViewController: UIViewController {
             user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
                 if let error = error {
                     print("sign up unsuccessful")
+                    let alert = UIAlertController(title: "Unable to sign up", message: "Seems like you are missing a couple fields, please go back and fill out all fields to create your account", preferredStyle: .alert)
+                            
+                            alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { (_) in
+                                
+                            }))
+                            
+                            self.present(alert, animated: true, completion: nil)
                 } else {
                     print("Account has been successfully created")
                     let  myViewController = self.storyboard?.instantiateViewController(withIdentifier: "DrinkViewController") as! DrinkViewController
