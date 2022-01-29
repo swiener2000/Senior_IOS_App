@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var GenderSignup: UISegmentedControl!
     @IBOutlet weak var WeightSignup: UISlider!
@@ -19,9 +19,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var favDrinkSignup: UIPickerView!
     
     @IBOutlet weak var WeightLabel: UILabel!
+    var cocktails = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        queryDrinks()
+        self.favDrinkSignup.delegate = self
+        self.favDrinkSignup.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +61,38 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+    func queryDrinks() {
+        let query = PFQuery(className:"Cocktails")
+        query.selectKeys(["Name"])
+        query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
+          if let error = error {
+            // The request failed
+            print(error.localizedDescription)
+          } else {
+              let objects = results!
+              for object in objects {
+                  let someString = object.value(forKey: "Name") as! String
+                  self.cocktails.append(someString)
+              }
+              
+
+              for name in self.cocktails {
+                  print("\(name)")
+              }
+          }
+        }
+        
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cocktails.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cocktails[row]
+    }
     /*
     // MARK: - Navigation
 

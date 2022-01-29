@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var favDrinkLabel: UILabel!
     
     var r: Double = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testParseConnection()
@@ -88,6 +89,8 @@ class HomeViewController: UIViewController {
                     }
                 }
     }
+    
+   
     /*
     // MARK: - Navigation
 
