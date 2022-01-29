@@ -16,12 +16,33 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var favDrinkLabel: UILabel!
+    
+    var r: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         testParseConnection()
         // Do any additional setup after loading the view.
         if let pUserName = PFUser.current()?["username"] as? String {
             self.userNameLabel.text = "@" + pUserName
+            let firstname = PFUser.current()?["First_Name"] as? String
+            let lastname = PFUser.current()?["Last_Name"] as? String
+            let gender = PFUser.current()?["Gender"] as? Int
+            let weight = PFUser.current()?["Weight"] as? Double
+            if firstname != nil, lastname != nil {
+                self.firstNameLabel.text = "\(firstname!)"
+                self.lastNameLabel.text = "\(lastname!)"
+            } else {
+                print("No user found")
+            }
+            
+            if gender == 0 {
+                self.genderLabel.text = "Gender: Female"
+                r = 0.55
+            } else {
+                self.genderLabel.text = "Gender: Male"
+                r = 0.68
+            }
+            self.weightLabel.text = "Weight: \(String(describing: Int(weight!)))"
         }
     }
     override func viewWillAppear(_ animated: Bool) {
