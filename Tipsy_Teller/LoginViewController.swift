@@ -12,10 +12,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtUsernameSignIn: UITextField!
     @IBOutlet weak var txtPasswordSignIn: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     @IBAction func signin(_ sender: Any) {
             PFUser.logInWithUsername(inBackground: self.txtUsernameSignIn.text!, password: self.txtPasswordSignIn.text!) {
@@ -38,10 +37,12 @@ class LoginViewController: UIViewController {
             }
         }
     @IBAction func signUp(_ sender: Any) {
+
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
     }
+    
     /*
     // MARK: - Navigation
 

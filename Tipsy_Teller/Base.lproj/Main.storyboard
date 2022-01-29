@@ -593,7 +593,7 @@
                         <outlet property="GenderSignup" destination="3UG-ls-sYr" id="UvO-2L-mme"/>
                         <outlet property="WeightLabel" destination="qtP-2v-kXS" id="Fmk-Vt-UPO"/>
                         <outlet property="WeightSignup" destination="FWH-IZ-uho" id="YQy-KD-WG5"/>
-                        <outlet property="favDrinkSignup" destination="bAJ-z2-ocO" id="e66-rK-QW2"/>
+                        <outlet property="favDrinkSignup" destination="bAJ-z2-ocO" id="mXd-Nk-xH5"/>
                         <outlet property="txtFirstNameSignup" destination="iTN-eO-QHw" id="Nqs-x3-CmQ"/>
                         <outlet property="txtLastNameSignup" destination="gAf-YE-BBb" id="fGX-ZE-OH1"/>
                         <outlet property="txtPasswordSignup" destination="49o-ee-BiA" id="gBH-oT-je4"/>

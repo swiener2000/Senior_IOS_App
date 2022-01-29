@@ -19,13 +19,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var favDrinkSignup: UIPickerView!
     
     @IBOutlet weak var WeightLabel: UILabel!
-    var cocktails = [String]()
+    var cocktailNames: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        queryDrinks()
         self.favDrinkSignup.delegate = self
         self.favDrinkSignup.dataSource = self
         // Do any additional setup after loading the view.
+        
+        print("Cocktail \(cocktailNames)")
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
@@ -61,7 +62,22 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 }
             }
         }
-    func queryDrinks() {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        print(cocktailNames.count)
+        return cocktailNames.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        print("Cocktail \(cocktailNames)")
+        return cocktailNames[row]
+    }
+    func queryDrinks() -> [String]{
+        var cocktails = [String]()
         let query = PFQuery(className:"Cocktails")
         query.selectKeys(["Name"])
         query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
@@ -72,26 +88,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
               let objects = results!
               for object in objects {
                   let someString = object.value(forKey: "Name") as! String
-                  self.cocktails.append(someString)
-              }
-              
-
-              for name in self.cocktails {
-                  print("\(name)")
+                  cocktails.append(someString)
               }
           }
         }
-        
-    }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return cocktails.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return cocktails[row]
+        for name in cocktails {
+            print("\(name)")
+        }
+        return cocktails
     }
     /*
     // MARK: - Navigation
