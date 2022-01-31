@@ -7,4 +7,5 @@ target 'Tipsy_Teller' do
 
   # Pods for Tipsy_Teller
 pod 'Parse'
+pod 'Charts'
 end

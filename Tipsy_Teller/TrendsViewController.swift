@@ -9,9 +9,10 @@ import UIKit
 
 class TrendsViewController: UIViewController {
 
+    var dates: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dates = getDates()
         // Do any additional setup after loading the view.
     }
     @IBAction func backToHome2(_ sender: Any) {
@@ -19,7 +20,23 @@ class TrendsViewController: UIViewController {
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
     }
-    
+
+    func getDates() -> [String]{
+        let cal = Calendar.current
+        var date = cal.startOfDay(for: Date())
+        var dateArray = [String]()
+        for i in 1 ... 7 {
+            let day = cal.component(.day, from: date)
+            let month = cal.component(.month, from: date)
+            let year = cal.component(.year, from: date)
+            let dates = "\(month)/\(day)/\(year)"
+            dateArray.append(dates)
+            date = cal.date(byAdding: .day, value: -1, to: date)!
+        }
+        dateArray.reverse()
+        print(dateArray)
+        return dateArray
+    }
 
     /*
     // MARK: - Navigation

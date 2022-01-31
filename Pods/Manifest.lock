@@ -1,22 +1,28 @@
 PODS:
   - Bolts/Tasks (1.9.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
 
 DEPENDENCIES:
+  - Charts
   - Parse
 
 SPEC REPOS:
   trunk:
     - Bolts
+    - Charts
     - Parse
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
 
-PODFILE CHECKSUM: 693c23509597f7e3df413b31bd1e1152e2e18d92
+PODFILE CHECKSUM: d99054944884d092538d20ea5328dc2e032517d9
 
 COCOAPODS: 1.11.2
