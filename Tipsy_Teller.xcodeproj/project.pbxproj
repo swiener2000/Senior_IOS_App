@@ -18,6 +18,7 @@
 		ECE9FE2E27A5A45700964AF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */; };
 		ECE9FE3027A5A49800964AF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */; };
 		ECE9FE3227A5A4B500964AF6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */; };
+		ECE9FE3427A5FADE00964AF6 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE3327A5FADE00964AF6 /* TrendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ECE9FE3327A5FADE00964AF6 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				EC1B128A279B4F2E0057D162 /* SceneDelegate.swift */,
 				EC1B128C279B4F2E0057D162 /* ViewController.swift */,
 				EC1B128E279B4F2E0057D162 /* Main.storyboard */,
+				ECE9FE3327A5FADE00964AF6 /* TrendsViewController.swift */,
 				ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */,
 				ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */,
 				ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */,
@@ -222,6 +225,7 @@
 				ECE9FE3227A5A4B500964AF6 /* SignUpViewController.swift in Sources */,
 				ECE9FE2E27A5A45700964AF6 /* HomeViewController.swift in Sources */,
 				EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */,
+				ECE9FE3427A5FADE00964AF6 /* TrendsViewController.swift in Sources */,
 				EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */,
 				EC1B128B279B4F2E0057D162 /* SceneDelegate.swift in Sources */,
 				EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */,

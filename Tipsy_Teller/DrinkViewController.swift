@@ -31,6 +31,7 @@ class DrinkViewController: UIViewController {
     @IBOutlet weak var size2Button: UIButton!
     @IBOutlet weak var size3Button: UIButton!
     @IBOutlet weak var size4Button: UIButton!
+    @IBOutlet weak var favDrinkButton: UIButton!
     var isWine: Bool = false
     var isBeer: Bool = false
     var isMalt: Bool = false
@@ -51,6 +52,11 @@ class DrinkViewController: UIViewController {
         size4Button.isHidden = true
     }
     
+    @IBAction func backToHome(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true)
+    }
     @IBAction func wineButton(_ sender: Any) {
         size1Button.isHidden = false
         size2Button.isHidden = false
@@ -100,7 +106,7 @@ class DrinkViewController: UIViewController {
         let firstname = PFUser.current()?["First_Name"] as? String
         let lastname = PFUser.current()?["Last_Name"] as? String
         let gender = PFUser.current()?["Gender"] as? Int
-        let weight = PFUser.current()?["Weight"] as? Double
+        let favDrink = PFUser.current()?["FavDrink"] as? String
         if firstname != nil, lastname != nil {
             let first = firstname
             let last = lastname
@@ -110,15 +116,43 @@ class DrinkViewController: UIViewController {
         }
         
         if gender == 0 {
-            self.genderLabel.text = "Gender: Female"
             r = 0.55
         } else {
-            self.genderLabel.text = "Gender: Male"
             r = 0.68
         }
-        self.weightLabel.text = "Weight: \(String(describing: Int(weight!)))"
+        favDrinkButton.setTitle(favDrink, for: .normal)
     }
 
+    @IBAction func favDrinkBac(_ sender: Any) {
+        if drinkCount == 0 {
+            timerCounting = true
+            startStopButton.setTitle("STOP", for: .normal)
+            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        }
+        var SD = 0.0
+        let favDrink = PFUser.current()?["FavDrink"] as? String
+        let query = PFQuery(className:"Cocktails")
+        query.whereKey("Name", equalTo: favDrink as Any)
+        do {
+            let results = try query.findObjects()
+            let objects = results
+            for object in objects {
+                SD = object.value(forKey: "SD") as! Double
+                print(SD)
+            }
+        } catch {
+            print(error)
+        }
+        
+        let weight = PFUser.current()?["Weight"] as? Double
+        
+        bac = bacCalc(weight: Int(weight!), r: r, drinks: SD, BAC: bac)
+        
+        let bacRounded = round(bac * 1000) / 1000.0
+        drinkCount += 1
+        BACLabel.text = "BAC: \(bacRounded)"
+    }
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true

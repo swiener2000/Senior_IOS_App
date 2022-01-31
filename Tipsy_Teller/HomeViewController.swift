@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
             let lastname = PFUser.current()?["Last_Name"] as? String
             let gender = PFUser.current()?["Gender"] as? Int
             let weight = PFUser.current()?["Weight"] as? Double
+            let favDrink = PFUser.current()?["FavDrink"] as? String
             if firstname != nil, lastname != nil {
                 self.firstNameLabel.text = "\(firstname!)"
                 self.lastNameLabel.text = "\(lastname!)"
@@ -44,6 +45,7 @@ class HomeViewController: UIViewController {
                 r = 0.68
             }
             self.weightLabel.text = "Weight: \(String(describing: Int(weight!)))"
+            self.favDrinkLabel.text = "Favorite Drink: \(String(describing: favDrink!))"
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +80,16 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func switchToTracker(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DrinkView")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
+    }
+    @IBAction func switchToTrends(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Trends")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
+    }
     func testParseConnection() {
         let myObj = PFObject(className:"FirstClass")
                 myObj["message"] = "Hey ! First message from Swift. Parse is now connected"
