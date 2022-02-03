@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import CryptoKit
 
 class DrinkViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class DrinkViewController: UIViewController {
     var bac: Double = 0.0
     var r: Double = 0.0
     var drinkCount: Int = 0
+    var objectID: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -152,6 +154,11 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         drinkCount += 1
         BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
     }
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
@@ -173,6 +180,11 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         drinkCount += 1
         BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
         isBeer = false
         isWine = false
         isMalt = false
@@ -203,6 +215,11 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         drinkCount += 1
         BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
         isBeer = false
         isWine = false
         isMalt = false
@@ -232,6 +249,11 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         drinkCount += 1
         BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
         isBeer = false
         isWine = false
         isMalt = false
@@ -261,6 +283,11 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         drinkCount += 1
         BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
         isBeer = false
         isWine = false
         isMalt = false
@@ -339,20 +366,22 @@ class DrinkViewController: UIViewController {
     func adjustBac() {
         if count % 3600 == 0 {
             bac = bac - 0.015
-            sendBAC()
         }
         let bacRounded = round(bac * 1000) / 1000.0
         BACLabel.text = "BAC: \(bacRounded)"
     }
     func sendBAC() {
         let date = Date()
+        let date2 = getDate()
         let username = PFUser.current()?.username
         let parseObject = PFObject(className:"BAC")
-
+        let timer = count
         parseObject["Username"] = username
         parseObject["BAC"] = bac
         parseObject["Date"] = date
         parseObject["Drinks"] = drinkCount
+        parseObject["Date2"] = date2
+        parseObject["Count"] = timer
 
         // Saves the new object.
         parseObject.saveInBackground {
@@ -360,16 +389,37 @@ class DrinkViewController: UIViewController {
           if (success) {
             // The object has been saved.
               print("Object has been saved")
+              self.objectID = parseObject.objectId!
           } else {
             // There was a problem, check error.description
               print("error")
           }
         }
     }
+    func updateBAC(username: String, BAC: Double, Date: NSDate, Drinks: Int, Date2: String, Count: Int) {
+        let objectid: String = objectID
+        
+        let query = PFQuery(className:"BAC")
+
+        do {
+            let results = try query.getObjectWithId(objectid)
+            results["Username"] = username
+            results["BAC"] = BAC
+            results["Date"] = Date
+            results["Drinks"] = Drinks
+            results["Date2"] = Date2
+            results["Count"] = Count
+
+            results.saveInBackground()
+        } catch {
+            print(error)
+        }
+        
+    }
     func getDate() -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         print(dateFormatter.string(from: date))
         return dateFormatter.string(from: date)
     }
