@@ -25,7 +25,7 @@ class TrendsViewController: UIViewController {
         let cal = Calendar.current
         var date = cal.startOfDay(for: Date())
         var dateArray = [String]()
-        for i in 1 ... 7 {
+        for _ in 1 ... 7 {
             let day = cal.component(.day, from: date)
             let month = cal.component(.month, from: date)
             let year = cal.component(.year, from: date)
