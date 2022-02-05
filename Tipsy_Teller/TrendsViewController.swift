@@ -12,10 +12,14 @@ class TrendsViewController: UIViewController {
 
     var dates: [String] = [String]()
     var bacArray: [Double] = [Double]()
+    var drinksArray: [Int] = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         dates = getDates()
-        bacArray = getBACData()
+        let results = getBACData()
+        bacArray = results.0
+        drinksArray = results.1
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func backToHome2(_ sender: Any) {
@@ -55,9 +59,10 @@ class TrendsViewController: UIViewController {
         return dateArray
     }
 
-    func getBACData() -> [Double]{
+    func getBACData() -> ([Double], [Int]) {
         var BACarray = [Double] ()
         var dateArray = [String] ()
+        var drinksArray = [Int] ()
         let username = PFUser.current()?.username
         
         let query = PFQuery(className: "BAC")
@@ -69,26 +74,31 @@ class TrendsViewController: UIViewController {
                 for object in objects {
                     let BAC = object.value(forKey: "BAC") as! Double
                     let date = object.value(forKey: "Date2") as! String
+                    let drinks = object.value(forKey: "Drinks") as! Int
                     dateArray.append(date)
                     BACarray.append(BAC)
+                    drinksArray.append(drinks)
                 }
             } catch {
                 print(error)
             }
         var updatedBACarray = [Double] ()
+        var updatedDrinksarray = [Int] ()
         for date in dates {
             if dateArray.contains(date) {
                 let index = dateArray.lastIndex(of: date)!
                 updatedBACarray.append(BACarray[index])
-                
+                updatedDrinksarray.append(drinksArray[index])
             } else {
                 updatedBACarray.append(0.0)
+                updatedDrinksarray.append(0)
             }
         }
         print(BACarray)
         print(dateArray)
         print(updatedBACarray)
-        return updatedBACarray
+        print(updatedDrinksarray)
+        return (updatedBACarray, updatedDrinksarray)
     }
     /*
     // MARK: - Navigation
