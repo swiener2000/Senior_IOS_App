@@ -144,10 +144,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ve-Lpc">
-                                        <rect key="frame" x="8" y="8" width="356" height="617"/>
+                                        <rect key="frame" x="8" y="8" width="356" height="545"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Bt-Fb-Yb8">
-                                                <rect key="frame" x="0.0" y="0.0" width="356" height="139"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="356" height="67"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAV-1j-sTV">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="31"/>
@@ -165,28 +165,16 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGk-ey-nzb">
-                                                        <rect key="frame" x="0.0" y="67" width="356" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v12-wx-bLW">
-                                                        <rect key="frame" x="0.0" y="103" width="356" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAC: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-o5-WjI">
-                                                <rect key="frame" x="0.0" y="165" width="356" height="48"/>
+                                                <rect key="frame" x="0.0" y="93" width="356" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mHg-px-f6s">
-                                                <rect key="frame" x="0.0" y="239" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="167" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss3-mT-YMb">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -223,7 +211,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-lm-UNe">
-                                                <rect key="frame" x="0.0" y="346" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="274" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-WD-1XF">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -260,7 +248,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-Rq-rSc">
-                                                <rect key="frame" x="0.0" y="453" width="356" height="31"/>
+                                                <rect key="frame" x="0.0" y="381" width="356" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Favorite Drink"/>
                                                 <connections>
@@ -268,13 +256,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqq-wY-ew4">
-                                                <rect key="frame" x="0.0" y="510" width="356" height="50"/>
+                                                <rect key="frame" x="0.0" y="438" width="356" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ton-dL-aEi">
-                                                <rect key="frame" x="0.0" y="586" width="356" height="31"/>
+                                                <rect key="frame" x="0.0" y="514" width="356" height="31"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-w0-Zpl">
                                                         <rect key="frame" x="0.0" y="0.0" width="178" height="31"/>
@@ -311,7 +299,6 @@
                         <outlet property="TimerLabel" destination="fqq-wY-ew4" id="QEJ-vw-WPM"/>
                         <outlet property="beerButton" destination="eHf-oz-jHW" id="rjR-qR-34s"/>
                         <outlet property="favDrinkButton" destination="o5A-Rq-rSc" id="dGb-cB-FzZ"/>
-                        <outlet property="genderLabel" destination="bGk-ey-nzb" id="60k-P2-X7k"/>
                         <outlet property="liquorButton" destination="qgM-nD-9wa" id="dZs-kV-fte"/>
                         <outlet property="maltButton" destination="aay-zM-HAH" id="iGe-ml-kFw"/>
                         <outlet property="profileLabel" destination="8Ka-Uw-1re" id="avM-N0-oHw"/>
@@ -321,7 +308,6 @@
                         <outlet property="size3Button" destination="23r-jN-JOy" id="gj8-dA-LdW"/>
                         <outlet property="size4Button" destination="C06-dl-J32" id="NKd-uV-ouB"/>
                         <outlet property="startStopButton" destination="ba0-w0-Zpl" id="f2S-ut-NBk"/>
-                        <outlet property="weightLabel" destination="v12-wx-bLW" id="gyH-LD-rRh"/>
                         <outlet property="wineButton" destination="ss3-mT-YMb" id="WSi-BH-tI4"/>
                     </connections>
                 </viewController>

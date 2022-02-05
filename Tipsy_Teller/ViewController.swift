@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         user["Weight"] = Int(self.WeightSignup.value)
             
             user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
-                if let error = error {
+                if error == nil {
                     print("sign up unsuccessful")
                     let alert = UIAlertController(title: "Unable to sign up", message: "Seems like you are missing a couple fields, please go back and fill out all fields to create your account", preferredStyle: .alert)
                             
