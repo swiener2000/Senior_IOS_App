@@ -8,6 +8,15 @@
 import UIKit
 import Parse
 import CryptoKit
+extension Date {
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: self)!
+    }
+
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: self)!
+    }
+}
 
 class DrinkViewController: UIViewController {
 
@@ -43,7 +52,7 @@ class DrinkViewController: UIViewController {
     var objectID: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(Date().dayBefore)
         // Do any additional setup after loading the view.
         print(PFUser.current()?.username as Any)
         loadProfile()
@@ -407,7 +416,6 @@ class DrinkViewController: UIViewController {
             results["BAC"] = BAC
             results["Date"] = Date
             results["Drinks"] = Drinks
-            results["Date2"] = Date2
             results["Count"] = Count
 
             results.saveInBackground()
@@ -418,6 +426,7 @@ class DrinkViewController: UIViewController {
     }
     func getDate() -> String {
         let date = Date()
+        print("Date: \(date)")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         print(dateFormatter.string(from: date))

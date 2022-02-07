@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var cocktailNames: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         cocktailNames = queryDrinks()
         self.favDrinkSignup.delegate = self
         self.favDrinkSignup.dataSource = self

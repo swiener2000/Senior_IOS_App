@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
     }
     @IBAction func signin(_ sender: Any) {
             PFUser.logInWithUsername(inBackground: self.txtUsernameSignIn.text!, password: self.txtPasswordSignIn.text!) {

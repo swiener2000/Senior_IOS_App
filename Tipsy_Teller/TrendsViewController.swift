@@ -7,33 +7,67 @@
 
 import UIKit
 import Parse
+import Charts
 
-class TrendsViewController: UIViewController {
+class TrendsViewController: UIViewController, ChartViewDelegate {
 
     var dates: [String] = [String]()
+    var datesD: [Double] = [Double]()
     var bacArray: [Double] = [Double]()
     var drinksArray: [Int] = [Int]()
+    
+    var lineChart = LineChartView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dates = getDates()
+        let results2 = getDates()
+        dates = results2.0
+        datesD = results2.1
         let results = getBACData()
         bacArray = results.0
         drinksArray = results.1
         
         // Do any additional setup after loading the view.
+        
+        lineChart.delegate = self
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        lineChart.frame = CGRect (x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        lineChart.center = view.center
+        
+        view.addSubview(lineChart)
+        var entries = [ChartDataEntry]()
+        print(datesD)
+        print(bacArray)
+        for x in 0..<(dates.count - 1) {
+            print(datesD[x])
+            print(bacArray[x])
+            entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
+        }
+        //print(entries)
+        let set = LineChartDataSet(entries: entries)
+        //print(set)
+        set.colors = ChartColorTemplates.material()
+        let data = LineChartData(dataSet: set)
+        lineChart.data = data
+    }
+    
     @IBAction func backToHome2(_ sender: Any) {
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
     }
 
-    func getDates() -> [String]{
+    func getDates() -> ([String], [Double]){
         let cal = Calendar.current
         var date = cal.startOfDay(for: Date())
         var dateArray = [String]()
         var month2: String = ""
         var day2: String = ""
+        var dateArray2 = [Double]()
         for _ in 1 ... 7 {
             let day = cal.component(.day, from: date)
             let month = cal.component(.month, from: date)
@@ -50,13 +84,18 @@ class TrendsViewController: UIViewController {
             } else {
                 day2 = "\(day)"
             }
+            let dates2 = "\(month2)\(day2)\(year)"
             let dates = "\(month2)/\(day2)/\(year)"
+            let dates2D = Double(dates2)!
             dateArray.append(dates)
+            dateArray2.append(dates2D)
             date = cal.date(byAdding: .day, value: -1, to: date)!
         }
         dateArray.reverse()
-        print(dateArray)
-        return dateArray
+        dateArray2.reverse()
+        print("dateArray: \(dateArray)")
+        print("dateArray: \(dateArray)")
+        return (dateArray, dateArray2)
     }
 
     func getBACData() -> ([Double], [Int]) {
@@ -94,10 +133,10 @@ class TrendsViewController: UIViewController {
                 updatedDrinksarray.append(0)
             }
         }
-        print(BACarray)
-        print(dateArray)
-        print(updatedBACarray)
-        print(updatedDrinksarray)
+        //print("BACarray: \(BACarray)")
+        //print(dateArray)
+        //print(updatedBACarray)
+        //print(updatedDrinksarray)
         return (updatedBACarray, updatedDrinksarray)
     }
     /*
