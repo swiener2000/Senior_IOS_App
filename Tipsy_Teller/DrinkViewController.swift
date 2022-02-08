@@ -21,8 +21,6 @@ extension Date {
 class DrinkViewController: UIViewController {
 
     @IBOutlet weak var profileLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var BACLabel: UILabel!
 
     @IBOutlet weak var resetButton: UIButton!
@@ -52,9 +50,8 @@ class DrinkViewController: UIViewController {
     var objectID: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Date().dayBefore)
         // Do any additional setup after loading the view.
-        
+        checkIfTimerIsRunning()
         loadProfile()
         startStopButton.setTitleColor(UIColor.green, for: .normal)
         size1Button.isHidden = true
@@ -169,6 +166,7 @@ class DrinkViewController: UIViewController {
         if drinkCount == 1 {
             sendBAC()
         } else {
+            print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
     }
@@ -195,6 +193,7 @@ class DrinkViewController: UIViewController {
         if drinkCount == 1 {
             sendBAC()
         } else {
+            print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         isBeer = false
@@ -230,6 +229,7 @@ class DrinkViewController: UIViewController {
         if drinkCount == 1 {
             sendBAC()
         } else {
+            print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         isBeer = false
@@ -264,6 +264,7 @@ class DrinkViewController: UIViewController {
         if drinkCount == 1 {
             sendBAC()
         } else {
+            print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         isBeer = false
@@ -298,6 +299,7 @@ class DrinkViewController: UIViewController {
         if drinkCount == 1 {
             sendBAC()
         } else {
+            print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         isBeer = false
@@ -410,11 +412,12 @@ class DrinkViewController: UIViewController {
     }
     func updateBAC(username: String, BAC: Double, Date: NSDate, Drinks: Int, Date2: String, Count: Int) {
         let objectid: String = objectID
-        
+        print(objectid)
         let query = PFQuery(className:"BAC")
-
+        print("\(username) \(BAC) \(Date) \(Drinks) \(Count)")
         do {
             let results = try query.getObjectWithId(objectid)
+            print(results)
             results["Username"] = username
             results["BAC"] = BAC
             results["Date"] = Date
@@ -423,7 +426,7 @@ class DrinkViewController: UIViewController {
 
             results.saveInBackground()
         } catch {
-            print(error)
+            print("Error \(error)")
         }
         
     }
@@ -445,6 +448,7 @@ class DrinkViewController: UIViewController {
         var CountArray = [Int]()
         var BACArray = [Double]()
         var DrinksArray = [Int]()
+        var objectIDArray = [String]()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let yesterdayFormatted = dateFormatter.string(from: yesterday)
@@ -459,10 +463,12 @@ class DrinkViewController: UIViewController {
                 let Count = object.value(forKey: "Count") as! Int
                 let BAC = object.value(forKey: "BAC") as! Double
                 let Drinks = object.value(forKey: "Drinks") as! Int
+                let Objectid = object.value(forKey: "objectId") as! String
                 DateArray.append(DateString)
                 CountArray.append(Count)
                 BACArray.append(BAC)
                 DrinksArray.append(Drinks)
+                objectIDArray.append(Objectid)
             }
         } catch {
             print(error)
@@ -473,6 +479,7 @@ class DrinkViewController: UIViewController {
                 let TodayCount = CountArray[index]
                 let TodayBAC = BACArray[index]
                 let TodayDrinks = DrinksArray[index]
+                let TodayObjectID = objectIDArray[index]
                 if TodayCount <= (3600 * 9) {
                     timerCounting = true
                     startStopButton.setTitle("STOP", for: .normal)
@@ -481,11 +488,26 @@ class DrinkViewController: UIViewController {
                     count = TodayCount
                     bac = TodayBAC
                     drinkCount = TodayDrinks
+                    objectID = TodayObjectID
                 }
             } else {
-                
+                let index = DateArray.lastIndex(of: yesterdayFormatted)!
+                let YesterdayCount = CountArray[index]
+                let YesterdayBAC = BACArray[index]
+                let YesterdayDrinks = DrinksArray[index]
+                let YesterdayObjectID = objectIDArray[index]
+                if YesterdayCount <= (3600 * 9) {
+                    timerCounting = true
+                    startStopButton.setTitle("STOP", for: .normal)
+                    startStopButton.setTitleColor(UIColor.red, for: .normal)
+                    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+                    count = YesterdayCount
+                    bac = YesterdayBAC
+                    drinkCount = YesterdayDrinks
+                    objectID = YesterdayObjectID
+                }
             }
         }
-        print(DateArray)
+        //print(DateArray)
     }
 }
