@@ -54,7 +54,7 @@ class DrinkViewController: UIViewController {
         super.viewDidLoad()
         print(Date().dayBefore)
         // Do any additional setup after loading the view.
-        print(PFUser.current()?.username as Any)
+        
         loadProfile()
         startStopButton.setTitleColor(UIColor.green, for: .normal)
         size1Button.isHidden = true
@@ -67,6 +67,9 @@ class DrinkViewController: UIViewController {
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
+        if drinkCount != 0 {
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
     }
     @IBAction func wineButton(_ sender: Any) {
         size1Button.isHidden = false
@@ -431,5 +434,58 @@ class DrinkViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         print(dateFormatter.string(from: date))
         return dateFormatter.string(from: date)
+    }
+    func checkIfTimerIsRunning() {
+        let query = PFQuery(className:"BAC")
+        let user = PFUser.current()?.username as Any
+        query.whereKey("Username", equalTo: user)
+        let today = getDate()
+        let yesterday = Date().dayBefore
+        var DateArray = [String]()
+        var CountArray = [Int]()
+        var BACArray = [Double]()
+        var DrinksArray = [Int]()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let yesterdayFormatted = dateFormatter.string(from: yesterday)
+        print("\(today) \(yesterdayFormatted)")
+        query.whereKey("Date2", containedIn: [today, yesterdayFormatted])
+        do {
+            let results = try query.findObjects()
+            print(results)
+            let objects = results
+            for object in objects {
+                let DateString = object.value(forKey: "Date2") as! String
+                let Count = object.value(forKey: "Count") as! Int
+                let BAC = object.value(forKey: "BAC") as! Double
+                let Drinks = object.value(forKey: "Drinks") as! Int
+                DateArray.append(DateString)
+                CountArray.append(Count)
+                BACArray.append(BAC)
+                DrinksArray.append(Drinks)
+            }
+        } catch {
+            print(error)
+        }
+        if(!DateArray.isEmpty && !CountArray.isEmpty) {
+            if (DateArray.contains(today)) {
+                let index = DateArray.lastIndex(of: today)!
+                let TodayCount = CountArray[index]
+                let TodayBAC = BACArray[index]
+                let TodayDrinks = DrinksArray[index]
+                if TodayCount <= (3600 * 9) {
+                    timerCounting = true
+                    startStopButton.setTitle("STOP", for: .normal)
+                    startStopButton.setTitleColor(UIColor.red, for: .normal)
+                    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+                    count = TodayCount
+                    bac = TodayBAC
+                    drinkCount = TodayDrinks
+                }
+            } else {
+                
+            }
+        }
+        print(DateArray)
     }
 }

@@ -50,7 +50,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         //print(entries)
         let set = LineChartDataSet(entries: entries)
         //print(set)
-        set.colors = ChartColorTemplates.material()
+        //set.colors = ChartColorTemplates.material()
         let data = LineChartData(dataSet: set)
         lineChart.data = data
     }
