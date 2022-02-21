@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -334,14 +335,22 @@
                                     <action selector="backToHome2:" destination="9Mn-FZ-2JL" eventType="touchUpInside" id="TEq-i2-fYY"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-pb-dwa">
+                                <rect key="frame" x="40" y="129" width="354" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nu0-f9-UMm"/>
                         <color key="backgroundColor" red="0.96210664509999999" green="0.76171058420000004" blue="0.41560238599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <connections>
+                        <outlet property="chtChart" destination="uoK-pb-dwa" id="YZ1-jl-5bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEm-si-dQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="121"/>
+            <point key="canvasLocation" x="1444.9275362318842" y="120.53571428571428"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dnN-xM-TiT">
@@ -556,5 +565,8 @@
         <image name="malt_cover" width="50" height="50"/>
         <image name="user" width="126" height="126"/>
         <image name="wine_cover" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

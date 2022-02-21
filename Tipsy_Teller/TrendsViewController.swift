@@ -9,15 +9,18 @@ import UIKit
 import Parse
 import Charts
 
+
 class TrendsViewController: UIViewController, ChartViewDelegate {
 
     var dates: [String] = [String]()
     var datesD: [Double] = [Double]()
     var bacArray: [Double] = [Double]()
     var drinksArray: [Int] = [Int]()
-    
+    var avgbacArray: [Double] = [Double]()
     var lineChart = LineChartView()
+    @IBOutlet weak var chtChart1: LineChartView!
     
+    @IBOutlet weak var chtChart: LineChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let results2 = getDates()
@@ -26,10 +29,11 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         let results = getBACData()
         bacArray = results.0
         drinksArray = results.1
-        
+        avgbacArray = getAverages()
         // Do any additional setup after loading the view.
         
         lineChart.delegate = self
+        //chtChart1.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,19 +44,25 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         
         view.addSubview(lineChart)
         var entries = [ChartDataEntry]()
-        print(datesD)
-        print(bacArray)
-        for x in 0..<(dates.count - 1) {
-            print(datesD[x])
-            print(bacArray[x])
+        var entries2 = [ChartDataEntry] ()
+        for x in 0..<(dates.count) {
+            //print(datesD[x])
+            //print(bacArray[x])
             entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
+            entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
         }
         //print(entries)
-        let set = LineChartDataSet(entries: entries)
+        let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
+        line1.colors = [NSUIColor.blue]
+        let line2 = LineChartDataSet(entries: entries2, label: "Average BAC")
+        line2.colors = [NSUIColor.red]
+        let data = LineChartData()
+        data.addDataSet(line1)
+        data.addDataSet(line2)
+        lineChart.data = data
         //print(set)
         //set.colors = ChartColorTemplates.material()
-        let data = LineChartData(dataSet: set)
-        lineChart.data = data
+        
     }
     
     @IBAction func backToHome2(_ sender: Any) {
@@ -79,7 +89,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
             }
             if(day<10) {
                 day2 = String(format: "%02d", day)
-                print(day2)
+                //print(day2)
                 
             } else {
                 day2 = "\(day)"
@@ -93,8 +103,8 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         }
         dateArray.reverse()
         dateArray2.reverse()
-        print("dateArray: \(dateArray)")
-        print("dateArray: \(dateArray)")
+        //print("dateArray: \(dateArray)")
+        //print("dateArray: \(dateArray)")
         return (dateArray, dateArray2)
     }
 
@@ -138,6 +148,64 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         //print(updatedBACarray)
         //print(updatedDrinksarray)
         return (updatedBACarray, updatedDrinksarray)
+    }
+    
+    func getAverages() -> [Double]{
+        var allBACarray = [Double]()
+        var allDateArray = [String] ()
+        var allDrinksArray = [Int] ()
+        let query = PFQuery(className: "BAC")
+        do {
+            let results = try query.findObjects()
+            let objects = results
+            for object in objects {
+                let BAC = object.value(forKey: "BAC") as! Double
+                let date = object.value(forKey: "Date2") as! String
+                let drinks = object.value(forKey: "Drinks") as! Int
+                allDateArray.append(date)
+                allBACarray.append(BAC)
+                allDrinksArray.append(drinks)
+            }
+        } catch {
+            print(error)
+        }
+        var indexes = [Int] ()
+        var updatedAllBACArray = [Double] ()
+        var BACIndexes = [Double] ()
+        //print(allDateArray)
+        for date in dates {
+            if allDateArray.contains(date) {
+                let searchValue = date
+                var currentIndex = 0
+                for dates in allDateArray {
+                    if searchValue.elementsEqual(dates) {
+                        print("SearchValue: \(searchValue) dates: \(dates)")
+                        indexes.append(currentIndex)
+                    }
+                    currentIndex+=1
+                }
+                for index in indexes {
+                    BACIndexes.append(allBACarray[index])
+                }
+                let mean = calculateMean(array: BACIndexes)
+                updatedAllBACArray.append(mean)
+            } else {
+                updatedAllBACArray.append(0.0)
+            }
+        }
+        print("index: \(indexes)")
+        print("Updated BAC array: \(updatedAllBACArray)")
+        return updatedAllBACArray
+    }
+    func calculateMean(array: [Double]) -> Double {
+        
+        // Calculate sum ot items with reduce function
+        let sum = array.reduce(0, { a, b in
+            return a + b
+        })
+        
+        let mean = Double(sum) / Double(array.count)
+        return Double(mean)
     }
     /*
     // MARK: - Navigation
