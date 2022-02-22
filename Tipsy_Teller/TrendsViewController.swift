@@ -19,7 +19,6 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
     var avgbacArray: [Double] = [Double]()
     var lineChart = LineChartView()
     @IBOutlet weak var chtChart1: LineChartView!
-    
     @IBOutlet weak var chtChart: LineChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         // Do any additional setup after loading the view.
         
         lineChart.delegate = self
-        //chtChart1.delegate = self
+        createGraphs()
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,7 +41,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         lineChart.frame = CGRect (x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
         lineChart.center = view.center
         
-        view.addSubview(lineChart)
+        //view.addSubview(lineChart)
         var entries = [ChartDataEntry]()
         var entries2 = [ChartDataEntry] ()
         for x in 0..<(dates.count) {
@@ -63,6 +62,25 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         //print(set)
         //set.colors = ChartColorTemplates.material()
         
+    }
+    func createGraphs() {
+        var entries = [ChartDataEntry]()
+        var entries2 = [ChartDataEntry] ()
+        for x in 0..<(dates.count) {
+            //print(datesD[x])
+            //print(bacArray[x])
+            entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
+            entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
+        }
+        //print(entries)
+        let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
+        line1.colors = [NSUIColor.blue]
+        let line2 = LineChartDataSet(entries: entries2, label: "Average BAC")
+        line2.colors = [NSUIColor.red]
+        let data = LineChartData()
+        data.addDataSet(line1)
+        data.addDataSet(line2)
+        chtChart1.data = data
     }
     
     @IBAction func backToHome2(_ sender: Any) {

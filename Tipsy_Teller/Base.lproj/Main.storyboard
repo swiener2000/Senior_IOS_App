@@ -300,7 +300,7 @@
                                     <action selector="backToHome2:" destination="9Mn-FZ-2JL" eventType="touchUpInside" id="TEq-i2-fYY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-pb-dwa">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-pb-dwa" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="40" y="129" width="354" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -310,7 +310,7 @@
                         <color key="backgroundColor" red="0.96210664509999999" green="0.76171058420000004" blue="0.41560238599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
-                        <outlet property="chtChart" destination="uoK-pb-dwa" id="YZ1-jl-5bh"/>
+                        <outlet property="chtChart1" destination="uoK-pb-dwa" id="1RR-e4-Ni3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEm-si-dQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
