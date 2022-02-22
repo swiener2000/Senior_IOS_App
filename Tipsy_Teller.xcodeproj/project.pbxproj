@@ -15,6 +15,7 @@
 		EC1B1292279B4F350057D162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1291279B4F350057D162 /* Assets.xcassets */; };
 		EC1B1295279B4F350057D162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1293279B4F350057D162 /* LaunchScreen.storyboard */; };
 		EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */; };
+		ECCAF73B27C463A200FC6BFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */; };
 		ECE9FE2E27A5A45700964AF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */; };
 		ECE9FE3027A5A49800964AF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */; };
 		ECE9FE3227A5A4B500964AF6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */; };
@@ -34,6 +35,7 @@
 		EC1B1294279B4F350057D162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC1B1296279B4F350057D162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				EC1B1293279B4F350057D162 /* LaunchScreen.storyboard */,
 				EC1B1296279B4F350057D162 /* Info.plist */,
 				EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */,
+				ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */,
 			);
 			path = Tipsy_Teller;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */,
 				ECE9FE3427A5FADE00964AF6 /* TrendsViewController.swift in Sources */,
 				EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */,
+				ECCAF73B27C463A200FC6BFD /* ProfileViewController.swift in Sources */,
 				EC1B128B279B4F2E0057D162 /* SceneDelegate.swift in Sources */,
 				EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */,
 			);

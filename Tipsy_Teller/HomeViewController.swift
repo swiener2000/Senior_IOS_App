@@ -22,11 +22,6 @@ extension UIViewController {
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var favDrinkLabel: UILabel!
     
     var r: Double = 0.0
     
@@ -36,27 +31,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let pUserName = PFUser.current()?["username"] as? String {
             self.userNameLabel.text = "@" + pUserName
-            let firstname = PFUser.current()?["First_Name"] as? String
-            let lastname = PFUser.current()?["Last_Name"] as? String
-            let gender = PFUser.current()?["Gender"] as? Int
-            let weight = PFUser.current()?["Weight"] as? Double
-            let favDrink = PFUser.current()?["FavDrink"] as? String
-            if firstname != nil, lastname != nil {
-                self.firstNameLabel.text = "\(firstname!)"
-                self.lastNameLabel.text = "\(lastname!)"
-            } else {
-                print("No user found")
-            }
-            
-            if gender == 0 {
-                self.genderLabel.text = "Gender: Female"
-                r = 0.55
-            } else {
-                self.genderLabel.text = "Gender: Male"
-                r = 0.68
-            }
-            self.weightLabel.text = "Weight: \(String(describing: Int(weight!)))"
-            self.favDrinkLabel.text = "Favorite Drink: \(String(describing: favDrink!))"
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +72,11 @@ class HomeViewController: UIViewController {
     }
     @IBAction func switchToTrends(_ sender: Any) {
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Trends")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
+    }
+    @IBAction func switchToProfile(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
     }
