@@ -169,6 +169,7 @@ class DrinkViewController: UIViewController {
             print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+       showAlert()
     }
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
@@ -196,6 +197,7 @@ class DrinkViewController: UIViewController {
             print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+        showAlert()
         isBeer = false
         isWine = false
         isMalt = false
@@ -232,6 +234,7 @@ class DrinkViewController: UIViewController {
             print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+        showAlert()
         isBeer = false
         isWine = false
         isMalt = false
@@ -267,6 +270,7 @@ class DrinkViewController: UIViewController {
             print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+        showAlert()
         isBeer = false
         isWine = false
         isMalt = false
@@ -302,6 +306,7 @@ class DrinkViewController: UIViewController {
             print("Button Clicked")
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+        showAlert()
         isBeer = false
         isWine = false
         isMalt = false
@@ -377,6 +382,12 @@ class DrinkViewController: UIViewController {
             timeString += String(format: "%02d", seconds)
             return timeString
         }
+    func showAlert() {
+        let alertController = UIAlertController(title:"Drink Entered",message:nil,preferredStyle:.alert)
+        self.present(alertController,animated:true,completion:{Timer.scheduledTimer(withTimeInterval: 5, repeats:false, block: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })})
+    }
     func adjustBac() {
         if count % 3600 == 0 {
             bac = bac - 0.015
