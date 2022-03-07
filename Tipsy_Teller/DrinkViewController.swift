@@ -51,6 +51,7 @@ class DrinkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         checkIfTimerIsRunning()
         loadProfile()
         startStopButton.setTitleColor(UIColor.green, for: .normal)
@@ -460,6 +461,7 @@ class DrinkViewController: UIViewController {
         var BACArray = [Double]()
         var DrinksArray = [Int]()
         var objectIDArray = [String]()
+        var updatedAtArray = [Date]()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let yesterdayFormatted = dateFormatter.string(from: yesterday)
@@ -475,6 +477,8 @@ class DrinkViewController: UIViewController {
                 let BAC = object.value(forKey: "BAC") as! Double
                 let Drinks = object.value(forKey: "Drinks") as! Int
                 let Objectid = object.value(forKey: "objectId") as! String
+                let dateString = object.value(forKey: "updatedAt") as! Date
+                updatedAtArray.append(dateString)
                 DateArray.append(DateString)
                 CountArray.append(Count)
                 BACArray.append(BAC)
@@ -491,12 +495,15 @@ class DrinkViewController: UIViewController {
                 let TodayBAC = BACArray[index]
                 let TodayDrinks = DrinksArray[index]
                 let TodayObjectID = objectIDArray[index]
+                let TodayUpdatedAt = updatedAtArray[index]
+                let timediff = getDateDiff(start: TodayUpdatedAt, end: Date())
+                print(timediff)
                 if TodayCount <= (3600 * 9) {
                     timerCounting = true
                     startStopButton.setTitle("STOP", for: .normal)
                     startStopButton.setTitleColor(UIColor.red, for: .normal)
                     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-                    count = TodayCount
+                    count = TodayCount + timediff
                     bac = TodayBAC
                     drinkCount = TodayDrinks
                     objectID = TodayObjectID
@@ -507,12 +514,15 @@ class DrinkViewController: UIViewController {
                 let YesterdayBAC = BACArray[index]
                 let YesterdayDrinks = DrinksArray[index]
                 let YesterdayObjectID = objectIDArray[index]
+                let YesterdayUpdatedAt = updatedAtArray[index]
+                let timediff = getDateDiff(start: YesterdayUpdatedAt, end: Date())
+                print(timediff)
                 if YesterdayCount <= (3600 * 9) {
                     timerCounting = true
                     startStopButton.setTitle("STOP", for: .normal)
                     startStopButton.setTitleColor(UIColor.red, for: .normal)
                     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-                    count = YesterdayCount
+                    count = YesterdayCount + timediff
                     bac = YesterdayBAC
                     drinkCount = YesterdayDrinks
                     objectID = YesterdayObjectID
@@ -520,5 +530,12 @@ class DrinkViewController: UIViewController {
             }
         }
         //print(DateArray)
+    }
+    func getDateDiff(start: Date, end: Date) -> Int  {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([Calendar.Component.second], from: start, to: end)
+
+        let seconds = dateComponents.second
+        return Int(seconds!)
     }
 }
