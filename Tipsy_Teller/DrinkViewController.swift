@@ -30,6 +30,9 @@ class DrinkViewController: UIViewController {
     var count: Int = 0
     var timerCounting: Bool = false
     
+    @IBOutlet weak var drivingIndicator1: UITextField!
+    @IBOutlet weak var drivingIndicator2: UITextField!
+    
     @IBOutlet weak var wineButton: UIButton!
     @IBOutlet weak var beerButton: UIButton!
     @IBOutlet weak var liquorButton: UIButton!
@@ -171,6 +174,7 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
        showAlert()
+        drivingIndicatorCheck()
     }
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
@@ -199,6 +203,7 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         showAlert()
+        drivingIndicatorCheck()
         isBeer = false
         isWine = false
         isMalt = false
@@ -236,6 +241,7 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         showAlert()
+        drivingIndicatorCheck()
         isBeer = false
         isWine = false
         isMalt = false
@@ -272,6 +278,7 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         showAlert()
+        drivingIndicatorCheck()
         isBeer = false
         isWine = false
         isMalt = false
@@ -308,6 +315,7 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
         showAlert()
+        drivingIndicatorCheck()
         isBeer = false
         isWine = false
         isMalt = false
@@ -421,6 +429,7 @@ class DrinkViewController: UIViewController {
               print("error")
           }
         }
+        drivingIndicatorCheck()
     }
     func updateBAC(username: String, BAC: Double, Date: NSDate, Drinks: Int, Date2: String, Count: Int) {
         let objectid: String = objectID
@@ -440,7 +449,7 @@ class DrinkViewController: UIViewController {
         } catch {
             print("Error \(error)")
         }
-        
+        drivingIndicatorCheck()
     }
     func getDate() -> String {
         let date = Date()
@@ -529,6 +538,7 @@ class DrinkViewController: UIViewController {
                 }
             }
         }
+        drivingIndicatorCheck()
         //print(DateArray)
     }
     func getDateDiff(start: Date, end: Date) -> Int  {
@@ -537,5 +547,22 @@ class DrinkViewController: UIViewController {
 
         let seconds = dateComponents.second
         return Int(seconds!)
+    }
+    func drivingIndicatorCheck() {
+        if bac < 0.08 && bac >= 0.01 {
+            self.drivingIndicator1.text = "You are safe to drive!"
+        } else if bac > 0.08 && bac < 0.20 {
+            self.drivingIndicator1.text = "Be careful, you are legally intoxicated!"
+            self.drivingIndicator2.isHidden = false
+            self.drivingIndicator2.text = "No Driving allowed!!"
+        } else if bac > 0.21 && bac < 0.40 {
+            self.drivingIndicator1.text = "You have reached dangerous level!"
+            self.drivingIndicator2.isHidden = false
+            self.drivingIndicator2.text = "NO DRIVING ALLOWED!!"
+        } else {
+            self.drivingIndicator1.text = "STOP DRINKING!!"
+            self.drivingIndicator2.isHidden = false
+            self.drivingIndicator2.text = "You are way past the safe levels"
+        }
     }
 }

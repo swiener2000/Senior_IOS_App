@@ -117,7 +117,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ve-Lpc">
-                                        <rect key="frame" x="8" y="8" width="356" height="545"/>
+                                        <rect key="frame" x="8" y="8" width="356" height="605"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Bt-Fb-Yb8">
                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="67"/>
@@ -146,8 +146,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-sr-usH">
+                                                <rect key="frame" x="0.0" y="154" width="356" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You are safe to drive!" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oIA-FM-jnD">
+                                                <rect key="frame" x="0.0" y="167" width="356" height="34"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mHg-px-f6s">
-                                                <rect key="frame" x="0.0" y="167" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="227" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss3-mT-YMb">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -184,7 +196,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-lm-UNe">
-                                                <rect key="frame" x="0.0" y="274" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="334" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-WD-1XF">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -221,7 +233,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-Rq-rSc">
-                                                <rect key="frame" x="0.0" y="381" width="356" height="31"/>
+                                                <rect key="frame" x="0.0" y="441" width="356" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Favorite Drink"/>
                                                 <connections>
@@ -229,13 +241,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqq-wY-ew4">
-                                                <rect key="frame" x="0.0" y="438" width="356" height="50"/>
+                                                <rect key="frame" x="0.0" y="498" width="356" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ton-dL-aEi">
-                                                <rect key="frame" x="0.0" y="514" width="356" height="31"/>
+                                                <rect key="frame" x="0.0" y="574" width="356" height="31"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-w0-Zpl">
                                                         <rect key="frame" x="0.0" y="0.0" width="178" height="31"/>
@@ -271,6 +283,8 @@
                         <outlet property="BACLabel" destination="O3f-o5-WjI" id="HMp-N8-9KY"/>
                         <outlet property="TimerLabel" destination="fqq-wY-ew4" id="QEJ-vw-WPM"/>
                         <outlet property="beerButton" destination="eHf-oz-jHW" id="rjR-qR-34s"/>
+                        <outlet property="drivingIndicator1" destination="oIA-FM-jnD" id="VCg-G1-VtV"/>
+                        <outlet property="drivingIndicator2" destination="gLT-sr-usH" id="8gP-Zg-a7N"/>
                         <outlet property="favDrinkButton" destination="o5A-Rq-rSc" id="dGb-cB-FzZ"/>
                         <outlet property="liquorButton" destination="qgM-nD-9wa" id="dZs-kV-fte"/>
                         <outlet property="maltButton" destination="aay-zM-HAH" id="iGe-ml-kFw"/>
