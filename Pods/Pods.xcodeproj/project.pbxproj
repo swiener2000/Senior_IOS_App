@@ -168,7 +168,7 @@
 		49DEE8439026E2294FC15327D16B1EBE /* PFACLState.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5B62277678AD503AFE56679A0D0F92 /* PFACLState.m */; };
 		49E617A134E4E5D48A49400DBE8E1FB9 /* PFAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A69CA1720912F6C8FB03BF1BC736254 /* PFAssert.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4A40A8D31116AF369C010DBF231FCC7D /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCADFD65B7B282F1293B0A3DFEAC8B5 /* BFTask.m */; };
-		4A40D27059D49C5A67B9AEE47993B364 /* Parse-Parse in Resources */ = {isa = PBXBuildFile; fileRef = ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */; };
+		4A40D27059D49C5A67B9AEE47993B364 /* Parse.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */; };
 		4A47E0FDAAACCD45F7DCE5CA94B37B84 /* PFSQLiteStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = D809A0045626860B7F703746E461100E /* PFSQLiteStatement.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4A4E6BE10B177250921F177FE122665B /* PFPropertyInfo_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8324C6E6C575CA9FA39A208EAF6A8D /* PFPropertyInfo_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4A7EC7DFDECCAEBFE661A9699D362F3B /* CombinedHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE6CF614F480D36D66F072A3D3D054 /* CombinedHighlighter.swift */; };
@@ -628,7 +628,7 @@
 		041796A63B31FB3F97741F4574C95795 /* PFUserFileCodingLogic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserFileCodingLogic.m; path = Parse/Parse/Internal/User/Coder/File/PFUserFileCodingLogic.m; sourceTree = "<group>"; };
 		045C92AF6AB565F28A95AA2B6B18418F /* PFAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAlertView.h; path = Parse/Parse/Internal/PFAlertView.h; sourceTree = "<group>"; };
 		0527D5B81C90514C709B91A5403B93A8 /* Parse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parse.debug.xcconfig; sourceTree = "<group>"; };
-		0652F2476C7C87C6C0F6CB68072EA25F /* Parse */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Parse; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0652F2476C7C87C6C0F6CB68072EA25F /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A747CEB80A6BC2F08B4EE1B3280F20 /* PFQueryController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryController.h; path = Parse/Parse/Internal/Query/Controller/PFQueryController.h; sourceTree = "<group>"; };
 		06CD7E6BF09E10992D90F62DE117EEB9 /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
 		0787AEA1C677C3CC10AF2CEC5BD91778 /* BarLineScatterCandleBubbleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartData.swift; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 		238F888D6775809597D5863872FC16BB /* PFJSONSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFJSONSerialization.h; path = Parse/Parse/Internal/PFJSONSerialization.h; sourceTree = "<group>"; };
 		23C2117BDC707F96CDB9D8A63157B930 /* PFURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSession.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession.h; sourceTree = "<group>"; };
 		2446F1E210A27677EDE43118D9698A14 /* PFRESTFileCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTFileCommand.h; path = Parse/Parse/Internal/Commands/PFRESTFileCommand.h; sourceTree = "<group>"; };
-		248EB203AE249596FFC55952F5590D95 /* TinyConstraints */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TinyConstraints; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		248EB203AE249596FFC55952F5590D95 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CAD8FFF94DB1C8F35397B68C5C9D6C /* PFPush+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFPush+Synchronous.h"; path = "Parse/Parse/PFPush+Synchronous.h"; sourceTree = "<group>"; };
 		259B7D5729401BA1F188868C6E167C65 /* Parse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-prefix.pch"; sourceTree = "<group>"; };
 		25C654BF559567BBFA43B5DD0B21FD44 /* PFBase64Encoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFBase64Encoder.h; path = Parse/Parse/Internal/PFBase64Encoder.h; sourceTree = "<group>"; };
@@ -736,7 +736,7 @@
 		30992A395B51FF32DD872BF899BB33A0 /* LineChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataProvider.swift; path = Source/Charts/Interfaces/LineChartDataProvider.swift; sourceTree = "<group>"; };
 		311816791706E3BE6117657D948D43CC /* PFInstallationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationController.m; path = Parse/Parse/Internal/Installation/Controller/PFInstallationController.m; sourceTree = "<group>"; };
 		3125D23BC30CD77512CFE48A51AE737A /* PFPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPropertyInfo.m; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo.m; sourceTree = "<group>"; };
-		32A85668B91CA8C88CA8BF06DABEBD77 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+		32A85668B91CA8C88CA8BF06DABEBD77 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
 		32C9809F421A64B0E24E11D128E6E1C5 /* PFMutablePushState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutablePushState.h; path = Parse/Parse/Internal/Push/State/PFMutablePushState.h; sourceTree = "<group>"; };
 		33A16536F395AC1E809428C2D32DA130 /* PieChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartData.swift; path = Source/Charts/Data/Implementations/Standard/PieChartData.swift; sourceTree = "<group>"; };
 		33A877BC2AD97F8A2CD07F2797E268AD /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
@@ -962,7 +962,7 @@
 		9D08E7D7B5C217A594CEC7D659C9EC96 /* CircleShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/CircleShapeRenderer.swift; sourceTree = "<group>"; };
 		9D63546CBE7ED2E4FD15277A6350B4FB /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
 		9D89478E06F18A053958E81D2E8C1CB7 /* PFRESTObjectCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTObjectCommand.m; path = Parse/Parse/Internal/Commands/PFRESTObjectCommand.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E4FEE6C51BFF13DAD64DB1123080C55 /* LineChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartRenderer.swift; path = Source/Charts/Renderers/LineChartRenderer.swift; sourceTree = "<group>"; };
 		9E8361D1098875D0249DE9B518A3F2C9 /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
 		9F0047DA369DFA9975C2C72C6AFBB846 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
@@ -978,7 +978,7 @@
 		A0FF737A5B965D5E0E0D5F978B57B954 /* PFPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPolygon.h; path = Parse/Parse/PFPolygon.h; sourceTree = "<group>"; };
 		A11911B26F76BA9D51DAE142A6B2AE1B /* PFMutableObjectState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableObjectState.m; path = Parse/Parse/Internal/Object/State/PFMutableObjectState.m; sourceTree = "<group>"; };
 		A158BE490DC5C30BAB7AFA5AC5896128 /* ParseInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParseInternal.h; path = Parse/Parse/Internal/ParseInternal.h; sourceTree = "<group>"; };
-		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2169B8CE6C3E59A7075D4FADD09463D /* PFCommandCache_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandCache_Private.h; path = Parse/Parse/Internal/PFCommandCache_Private.h; sourceTree = "<group>"; };
 		A21B9CC76BDFDEC1B043595894B4F9A0 /* PFApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFApplication.h; path = Parse/Parse/Internal/PFApplication.h; sourceTree = "<group>"; };
 		A3DAAA357C78947B8EA8631700702E85 /* PFAnalyticsUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalyticsUtilities.h; path = Parse/Parse/Internal/Analytics/Utilities/PFAnalyticsUtilities.h; sourceTree = "<group>"; };
@@ -1163,7 +1163,7 @@
 		EC0DC8C25530ECAF748F1138A6484C38 /* TinyConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyConstraints.swift; path = TinyConstraints/Classes/TinyConstraints.swift; sourceTree = "<group>"; };
 		ED076639C5227EA70451AD70C8F23E03 /* PFThreadsafety.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFThreadsafety.m; path = Parse/Parse/Internal/ThreadSafety/PFThreadsafety.m; sourceTree = "<group>"; };
 		ED3D9CF346838D2DD6303073E9F08902 /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
-		ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Parse-Parse"; path = Parse.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parse.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA1C938FE7FAE006C8E72B60B431624 /* PFCurrentInstallationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCurrentInstallationController.h; path = Parse/Parse/Internal/Installation/CurrentInstallationController/PFCurrentInstallationController.h; sourceTree = "<group>"; };
 		EDBFD2EAAFB74E74807E8013D7D439A7 /* PFFileState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFileState.m; path = Parse/Parse/Internal/File/State/PFFileState.m; sourceTree = "<group>"; };
 		EDD8E74EDA9A31013B57F810A06813A3 /* Constrainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrainable.swift; path = TinyConstraints/Classes/Constrainable.swift; sourceTree = "<group>"; };
@@ -1194,7 +1194,7 @@
 		F772336F84358EA0A06ECBA9A53BA4C3 /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartAnimationEasing.swift; path = Source/Charts/Animation/ChartAnimationEasing.swift; sourceTree = "<group>"; };
 		F799BE3DE31F3914C61B8F4212175DAD /* PFObjectFileCodingLogic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectFileCodingLogic.h; path = Parse/Parse/Internal/Object/Coder/File/PFObjectFileCodingLogic.h; sourceTree = "<group>"; };
 		F8254F1F5DC75052A15BF2A9C5C0D892 /* PFOfflineQueryController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFOfflineQueryController.h; path = Parse/Parse/Internal/Query/Controller/PFOfflineQueryController.h; sourceTree = "<group>"; };
-		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bolts; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96D4440DFA531708DCC230B913053EF /* CandleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartData.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartData.swift; sourceTree = "<group>"; };
 		F9A5C20B24B0A26171B3F3DAA594C815 /* PFProductsRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFProductsRequestHandler.m; path = Parse/Parse/Internal/Product/ProductsRequestHandler/PFProductsRequestHandler.m; sourceTree = "<group>"; };
 		FA16392C6649BCD2334CCC9102B8F3B0 /* PFSystemLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFSystemLogger.m; path = Parse/Parse/Internal/PFSystemLogger.m; sourceTree = "<group>"; };
@@ -1286,7 +1286,6 @@
 				EE03DCC22C86EDC812DE138AE7958DBA /* Core */,
 				E4D4CD36B6F30080D3347AA46F9E08C1 /* Support Files */,
 			);
-			name = Parse;
 			path = Parse;
 			sourceTree = "<group>";
 		};
@@ -1309,12 +1308,12 @@
 		2408E52FD426D246DE617E461FC6C6D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */,
-				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */,
-				0652F2476C7C87C6C0F6CB68072EA25F /* Parse */,
-				ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */,
+				F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */,
+				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */,
+				0652F2476C7C87C6C0F6CB68072EA25F /* Parse.framework */,
+				ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */,
 				2A6652DC829672F0212BBDC6429DE1B3 /* Pods-Tipsy_Teller */,
-				248EB203AE249596FFC55952F5590D95 /* TinyConstraints */,
+				248EB203AE249596FFC55952F5590D95 /* TinyConstraints.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1538,7 +1537,6 @@
 				67C9125DB3DC6FF2EAAB6549DC47661E /* Support Files */,
 				8B53033CEA96AE4D26A5C783944D669C /* Tasks */,
 			);
-			name = Bolts;
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -1585,7 +1583,6 @@
 				30E08F8D2117B91F34A2D1B06667D8B1 /* Core */,
 				6985BC1B7D0E82F4104EEB9B2F2A2D08 /* Support Files */,
 			);
-			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -2020,7 +2017,6 @@
 				9FFC6B33716CA4FEB63B0E7DCDFEE567 /* TinyEdgeInsets.swift */,
 				7AF4C9F96B281F355832F8C858933153 /* Support Files */,
 			);
-			name = TinyConstraints;
 			path = TinyConstraints;
 			sourceTree = "<group>";
 		};
@@ -2336,7 +2332,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */;
+			productReference = F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */ = {
@@ -2354,7 +2350,7 @@
 			);
 			name = TinyConstraints;
 			productName = TinyConstraints;
-			productReference = 248EB203AE249596FFC55952F5590D95 /* TinyConstraints */;
+			productReference = 248EB203AE249596FFC55952F5590D95 /* TinyConstraints.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7F3FE5658AEC4AF2B296EDA73A218182 /* Parse */ = {
@@ -2374,7 +2370,7 @@
 			);
 			name = Parse;
 			productName = Parse;
-			productReference = 0652F2476C7C87C6C0F6CB68072EA25F /* Parse */;
+			productReference = 0652F2476C7C87C6C0F6CB68072EA25F /* Parse.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BF03B0B2B8B052092CB5F90CC5FB3757 /* Charts */ = {
@@ -2392,7 +2388,7 @@
 			);
 			name = Charts;
 			productName = Charts;
-			productReference = A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */;
+			productReference = A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EAFFB8E885E2EDFD55062DE694143593 /* Parse-Parse */ = {
@@ -2409,7 +2405,7 @@
 			);
 			name = "Parse-Parse";
 			productName = Parse;
-			productReference = ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */;
+			productReference = ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -2419,7 +2415,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1320;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -2470,7 +2466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A40D27059D49C5A67B9AEE47993B364 /* Parse-Parse in Resources */,
+				4A40D27059D49C5A67B9AEE47993B364 /* Parse.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2935,7 +2931,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-Parse-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = Parse;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2959,7 +2955,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TinyConstraints/TinyConstraints-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TinyConstraints/TinyConstraints-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2994,7 +2990,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3029,7 +3025,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TinyConstraints/TinyConstraints-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TinyConstraints/TinyConstraints-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3055,7 +3051,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-Parse-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = Parse;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -3244,7 +3240,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3279,7 +3275,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3314,7 +3310,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3348,7 +3344,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3382,7 +3378,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

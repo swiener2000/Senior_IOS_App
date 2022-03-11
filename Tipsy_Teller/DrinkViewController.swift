@@ -403,6 +403,7 @@ class DrinkViewController: UIViewController {
         }
         let bacRounded = round(bac * 1000) / 1000.0
         BACLabel.text = "BAC: \(bacRounded)"
+        drivingIndicatorCheck()
     }
     func sendBAC() {
         let date = Date()
@@ -507,6 +508,7 @@ class DrinkViewController: UIViewController {
                 let TodayUpdatedAt = updatedAtArray[index]
                 let timediff = getDateDiff(start: TodayUpdatedAt, end: Date())
                 print(timediff)
+                getHoursPast(timediff: timediff)
                 if TodayCount <= (3600 * 9) {
                     timerCounting = true
                     startStopButton.setTitle("STOP", for: .normal)
@@ -526,6 +528,7 @@ class DrinkViewController: UIViewController {
                 let YesterdayUpdatedAt = updatedAtArray[index]
                 let timediff = getDateDiff(start: YesterdayUpdatedAt, end: Date())
                 print(timediff)
+                getHoursPast(timediff: timediff)
                 if YesterdayCount <= (3600 * 9) {
                     timerCounting = true
                     startStopButton.setTitle("STOP", for: .normal)
@@ -538,8 +541,21 @@ class DrinkViewController: UIViewController {
                 }
             }
         }
+        
         drivingIndicatorCheck()
         //print(DateArray)
+    }
+    func updateBACtimePast(Hours: Double) {
+        let updateValue = Hours * 0.015
+            bac = bac - updateValue
+
+        let bacRounded = round(bac * 1000) / 1000.0
+        BACLabel.text = "BAC: \(bacRounded)"
+    }
+    func getHoursPast(timediff: Int){
+        let hours: Int
+        hours = timediff / 3600
+        updateBACtimePast(Hours: Double(hours))
     }
     func getDateDiff(start: Date, end: Date) -> Int  {
         let calendar = Calendar.current
@@ -551,6 +567,7 @@ class DrinkViewController: UIViewController {
     func drivingIndicatorCheck() {
         if bac < 0.08 && bac >= 0.01 {
             self.drivingIndicator1.text = "You are safe to drive!"
+            self.drivingIndicator2.isHidden = true
         } else if bac > 0.08 && bac < 0.20 {
             self.drivingIndicator1.text = "Be careful, you are legally intoxicated!"
             self.drivingIndicator2.isHidden = false
@@ -564,5 +581,6 @@ class DrinkViewController: UIViewController {
             self.drivingIndicator2.isHidden = false
             self.drivingIndicator2.text = "You are way past the safe levels"
         }
+        
     }
 }

@@ -19,7 +19,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
     var avgbacArray: [Double] = [Double]()
     var lineChart = LineChartView()
     @IBOutlet weak var chtChart1: LineChartView!
-    @IBOutlet weak var chtChart: LineChartView!
+    @IBOutlet weak var chtChart2: LineChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let results2 = getDates()
@@ -65,12 +65,14 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
     }
     func createGraphs() {
         var entries = [ChartDataEntry]()
-        var entries2 = [ChartDataEntry] ()
+        var entries2 = [ChartDataEntry]()
+        var entries3 = [ChartDataEntry]()
         for x in 0..<(dates.count) {
             //print(datesD[x])
             //print(bacArray[x])
             entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
             entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
+            entries3.append(ChartDataEntry(x: datesD[x], y: Double(drinksArray[x])))
         }
         //print(entries)
         let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
@@ -81,6 +83,11 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         data.addDataSet(line1)
         data.addDataSet(line2)
         chtChart1.data = data
+        let line3 = LineChartDataSet(entries: entries3, label: "Users Drink count")
+        line3.colors = [NSUIColor.blue]
+        let data2 = LineChartData()
+        data2.addDataSet(line3)
+        chtChart2.data = data2
     }
     
     @IBAction func backToHome2(_ sender: Any) {
