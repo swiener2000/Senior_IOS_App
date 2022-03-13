@@ -555,6 +555,7 @@ class DrinkViewController: UIViewController {
     func getHoursPast(timediff: Int){
         let hours: Int
         hours = timediff / 3600
+        print("Hours: \(hours) ")
         updateBACtimePast(Hours: Double(hours))
     }
     func getDateDiff(start: Date, end: Date) -> Int  {

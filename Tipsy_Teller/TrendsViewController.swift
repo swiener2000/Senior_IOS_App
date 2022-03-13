@@ -17,6 +17,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
     var bacArray: [Double] = [Double]()
     var drinksArray: [Int] = [Int]()
     var avgbacArray: [Double] = [Double]()
+    var avgDrinksArray: [Double] = [Double]()
     var lineChart = LineChartView()
     @IBOutlet weak var chtChart1: LineChartView!
     @IBOutlet weak var chtChart2: LineChartView!
@@ -28,66 +29,56 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         let results = getBACData()
         bacArray = results.0
         drinksArray = results.1
-        avgbacArray = getAverages()
+        let results3 = getAverages()
+        avgbacArray = results3.0
+        avgDrinksArray = results3.1
         // Do any additional setup after loading the view.
         
         lineChart.delegate = self
         createGraphs()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        lineChart.frame = CGRect (x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        lineChart.center = view.center
-        
-        //view.addSubview(lineChart)
-        var entries = [ChartDataEntry]()
-        var entries2 = [ChartDataEntry] ()
-        for x in 0..<(dates.count) {
-            //print(datesD[x])
-            //print(bacArray[x])
-            entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
-            entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
-        }
-        //print(entries)
-        let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
-        line1.colors = [NSUIColor.blue]
-        let line2 = LineChartDataSet(entries: entries2, label: "Average BAC")
-        line2.colors = [NSUIColor.red]
-        let data = LineChartData()
-        data.addDataSet(line1)
-        data.addDataSet(line2)
-        lineChart.data = data
-        //print(set)
-        //set.colors = ChartColorTemplates.material()
-        
-    }
+    
     func createGraphs() {
+        print(datesD)
         var entries = [ChartDataEntry]()
         var entries2 = [ChartDataEntry]()
         var entries3 = [ChartDataEntry]()
+        var entries4 = [ChartDataEntry]()
         for x in 0..<(dates.count) {
             //print(datesD[x])
             //print(bacArray[x])
-            entries.append(ChartDataEntry(x: datesD[x], y: bacArray[x]))
-            entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
-            entries3.append(ChartDataEntry(x: datesD[x], y: Double(drinksArray[x])))
+            entries.append(ChartDataEntry(x: Double(x), y: bacArray[x]))
+            //entries2.append(ChartDataEntry(x: datesD[x], y: avgbacArray[x]))
+            entries2.append(ChartDataEntry(x: Double(x), y: avgbacArray[x]))
+            entries3.append(ChartDataEntry(x: Double(x), y: Double(drinksArray[x])))
+            entries4.append(ChartDataEntry(x: Double(x), y: Double(avgDrinksArray[x])))
+            
         }
-        //print(entries)
+        print(entries)
         let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
         line1.colors = [NSUIColor.blue]
         let line2 = LineChartDataSet(entries: entries2, label: "Average BAC")
         line2.colors = [NSUIColor.red]
-        let data = LineChartData()
-        data.addDataSet(line1)
-        data.addDataSet(line2)
-        chtChart1.data = data
+        self.chtChart1.data = LineChartData(dataSets: [line1, line2])
+
+        chtChart1.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        let xAxisValue = chtChart1.xAxis
+        let dateValue = DateValueFormatter()
+        dateValue.dates = dates
+        xAxisValue.valueFormatter = dateValue
+        
         let line3 = LineChartDataSet(entries: entries3, label: "Users Drink count")
         line3.colors = [NSUIColor.blue]
-        let data2 = LineChartData()
-        data2.addDataSet(line3)
-        chtChart2.data = data2
+        let line4 = LineChartDataSet(entries: entries4, label: "Average Drink count")
+        line4.colors = [NSUIColor.red]
+        self.chtChart2.data = LineChartData(dataSets: [line3, line4])
+        
+        chtChart2.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        let xAxisValue2 = chtChart2.xAxis
+        let dateValue2 = DateValueFormatter()
+        dateValue2.dates = dates
+        xAxisValue2.valueFormatter = dateValue2
     }
     
     @IBAction func backToHome2(_ sender: Any) {
@@ -175,7 +166,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         return (updatedBACarray, updatedDrinksarray)
     }
     
-    func getAverages() -> [Double]{
+    func getAverages() -> ([Double], [Double]){
         var allBACarray = [Double]()
         var allDateArray = [String] ()
         var allDrinksArray = [Int] ()
@@ -196,7 +187,9 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         }
         var indexes = [Int] ()
         var updatedAllBACArray = [Double] ()
+        var updatedAllDRINKSArray = [Double] ()
         var BACIndexes = [Double] ()
+        var DRINKSIndexes = [Double] ()
         //print(allDateArray)
         for date in dates {
             if allDateArray.contains(date) {
@@ -211,16 +204,20 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
                 }
                 for index in indexes {
                     BACIndexes.append(allBACarray[index])
+                    DRINKSIndexes.append(Double(allDrinksArray[index]))
                 }
-                let mean = calculateMean(array: BACIndexes)
-                updatedAllBACArray.append(mean)
+                let BACmean = calculateMean(array: BACIndexes)
+                let Drinksmean = calculateMean(array: DRINKSIndexes)
+                updatedAllBACArray.append(BACmean)
+                updatedAllDRINKSArray.append(Drinksmean)
             } else {
                 updatedAllBACArray.append(0.0)
+                updatedAllDRINKSArray.append(0.0)
             }
         }
         print("index: \(indexes)")
         print("Updated BAC array: \(updatedAllBACArray)")
-        return updatedAllBACArray
+        return (updatedAllBACArray, updatedAllDRINKSArray)
     }
     func calculateMean(array: [Double]) -> Double {
         
