@@ -12,6 +12,8 @@ import Charts
 
 class TrendsViewController: UIViewController, ChartViewDelegate {
 
+    
+
     var dates: [String] = [String]()
     var datesD: [Double] = [Double]()
     var bacArray: [Double] = [Double]()
@@ -21,6 +23,8 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
     var lineChart = LineChartView()
     @IBOutlet weak var chtChart1: LineChartView!
     @IBOutlet weak var chtChart2: LineChartView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let results2 = getDates()
@@ -36,9 +40,14 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         
         lineChart.delegate = self
         createGraphs()
+        
     }
     
-    
+    @IBAction func toHealth(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Health")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true)
+    }
     func createGraphs() {
         print(datesD)
         var entries = [ChartDataEntry]()
@@ -229,14 +238,5 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
         let mean = Double(sum) / Double(array.count)
         return Double(mean)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -57,12 +57,13 @@ class DrinkViewController: UIViewController {
         
         checkIfTimerIsRunning()
         loadProfile()
-        startStopButton.setTitleColor(UIColor.green, for: .normal)
+        //startStopButton.setTitleColor(UIColor.green, for: .normal)
         size1Button.isHidden = true
         size2Button.isHidden = true
         size3Button.isHidden = true
         size4Button.isHidden = true
     }
+    
     
     @IBAction func backToHome(_ sender: Any) {
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
@@ -141,8 +142,8 @@ class DrinkViewController: UIViewController {
     @IBAction func favDrinkBac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
-            startStopButton.setTitle("STOP", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         var SD = 0.0
@@ -154,7 +155,7 @@ class DrinkViewController: UIViewController {
             let objects = results
             for object in objects {
                 SD = object.value(forKey: "SD") as! Double
-                print(SD)
+                //print(SD)
             }
         } catch {
             print(error)
@@ -179,8 +180,8 @@ class DrinkViewController: UIViewController {
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
-            startStopButton.setTitle("STOP", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         let weight = PFUser.current()?["Weight"] as? Double
@@ -217,8 +218,8 @@ class DrinkViewController: UIViewController {
     @IBAction func size2Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
-            startStopButton.setTitle("STOP", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         let weight = PFUser.current()?["Weight"] as? Double
@@ -254,8 +255,8 @@ class DrinkViewController: UIViewController {
     @IBAction func size3Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
-            startStopButton.setTitle("STOP", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         let weight = PFUser.current()?["Weight"] as? Double
@@ -291,8 +292,8 @@ class DrinkViewController: UIViewController {
     @IBAction func size4Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
-            startStopButton.setTitle("STOP", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         let weight = PFUser.current()?["Weight"] as? Double
@@ -334,39 +335,7 @@ class DrinkViewController: UIViewController {
         return bac
     }
 
-    @IBAction func resetTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Reset Timer?", message: "Are you sure you would like to reset the Timer?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: { (_) in
-                    //do nothing
-                }))
-                
-                alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (_) in
-                    self.count = 0
-                    self.timer.invalidate()
-                    self.TimerLabel.text = self.makeTimeString(hours: 0, minutes: 0, seconds: 0)
-                    self.startStopButton.setTitle("START", for: .normal)
-                    self.startStopButton.setTitleColor(UIColor.green, for: .normal)
-                }))
-                
-                self.present(alert, animated: true, completion: nil)
-    }
     
-    @IBAction func startStopTapped(_ sender: Any) {
-        if(timerCounting)
-                {
-                    timerCounting = false
-                    timer.invalidate()
-                    startStopButton.setTitle("START", for: .normal)
-                    startStopButton.setTitleColor(UIColor.green, for: .normal)
-                }
-                else
-                {
-                    timerCounting = true
-                    startStopButton.setTitle("STOP", for: .normal)
-                    startStopButton.setTitleColor(UIColor.red, for: .normal)
-                    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-                }
-    }
     @objc func timerCounter() -> Void
         {
             count = count + 1
@@ -434,12 +403,12 @@ class DrinkViewController: UIViewController {
     }
     func updateBAC(username: String, BAC: Double, Date: NSDate, Drinks: Int, Date2: String, Count: Int) {
         let objectid: String = objectID
-        print(objectid)
+        print("Object ID \(objectid)")
         let query = PFQuery(className:"BAC")
         print("\(username) \(BAC) \(Date) \(Drinks) \(Count)")
         do {
             let results = try query.getObjectWithId(objectid)
-            print(results)
+            //print(results)
             results["Username"] = username
             results["BAC"] = BAC
             results["Date"] = Date
@@ -457,7 +426,7 @@ class DrinkViewController: UIViewController {
         print("Date: \(date)")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        print(dateFormatter.string(from: date))
+        //print(dateFormatter.string(from: date))
         return dateFormatter.string(from: date)
     }
     func checkIfTimerIsRunning() {
@@ -479,7 +448,7 @@ class DrinkViewController: UIViewController {
         query.whereKey("Date2", containedIn: [today, yesterdayFormatted])
         do {
             let results = try query.findObjects()
-            print(results)
+            //print(results)
             let objects = results
             for object in objects {
                 let DateString = object.value(forKey: "Date2") as! String
@@ -507,17 +476,25 @@ class DrinkViewController: UIViewController {
                 let TodayObjectID = objectIDArray[index]
                 let TodayUpdatedAt = updatedAtArray[index]
                 let timediff = getDateDiff(start: TodayUpdatedAt, end: Date())
-                print(timediff)
-                getHoursPast(timediff: timediff)
-                if TodayCount <= (3600 * 9) {
+                //print(timediff)
+                print("TodayCount \(TodayCount)")
+                if TodayCount <= 36000 {
+                    print("TodayCount \(TodayCount)")
                     timerCounting = true
-                    startStopButton.setTitle("STOP", for: .normal)
-                    startStopButton.setTitleColor(UIColor.red, for: .normal)
+                    //startStopButton.setTitle("STOP", for: .normal)
+                    //startStopButton.setTitleColor(UIColor.red, for: .normal)
                     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
                     count = TodayCount + timediff
                     bac = TodayBAC
                     drinkCount = TodayDrinks
                     objectID = TodayObjectID
+                    getHoursPast(timediff: timediff)
+                } else {
+                    print("TodayCount \(TodayCount)")
+                    timerCounting = false
+                    timer.invalidate()
+                    bac = 0.0
+                    drinkCount = 0
                 }
             } else {
                 let index = DateArray.lastIndex(of: yesterdayFormatted)!
@@ -527,17 +504,24 @@ class DrinkViewController: UIViewController {
                 let YesterdayObjectID = objectIDArray[index]
                 let YesterdayUpdatedAt = updatedAtArray[index]
                 let timediff = getDateDiff(start: YesterdayUpdatedAt, end: Date())
-                print(timediff)
-                getHoursPast(timediff: timediff)
-                if YesterdayCount <= (3600 * 9) {
+                //print(timediff)
+                print("YesterdayCount \(YesterdayCount)")
+                if YesterdayCount <= 36000 {
+                    print("YesterdayCount \(YesterdayCount)")
                     timerCounting = true
-                    startStopButton.setTitle("STOP", for: .normal)
-                    startStopButton.setTitleColor(UIColor.red, for: .normal)
+                    //startStopButton.setTitle("STOP", for: .normal)
+                    //startStopButton.setTitleColor(UIColor.red, for: .normal)
                     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
                     count = YesterdayCount + timediff
                     bac = YesterdayBAC
                     drinkCount = YesterdayDrinks
                     objectID = YesterdayObjectID
+                    getHoursPast(timediff: timediff)
+                } else {
+                    timerCounting = false
+                    timer.invalidate()
+                    bac = 0.0
+                    drinkCount = 0
                 }
             }
         }
@@ -547,7 +531,18 @@ class DrinkViewController: UIViewController {
     }
     func updateBACtimePast(Hours: Double) {
         let updateValue = Hours * 0.015
-            bac = bac - updateValue
+        var Newbac = 0.0
+        print("updateValue \(updateValue)")
+        
+        if bac != 0.0 {
+            Newbac = bac - updateValue
+            if (Newbac >= 0.0) {
+                print("bac \(bac)")
+                bac = Newbac
+            }
+        }
+        
+        print("updated bac \(bac)")
 
         let bacRounded = round(bac * 1000) / 1000.0
         BACLabel.text = "BAC: \(bacRounded)"
@@ -555,7 +550,7 @@ class DrinkViewController: UIViewController {
     func getHoursPast(timediff: Int){
         let hours: Int
         hours = timediff / 3600
-        print("Hours: \(hours) ")
+        print("Hours: \(Double(hours)) ")
         updateBACtimePast(Hours: Double(hours))
     }
     func getDateDiff(start: Date, end: Date) -> Int  {
