@@ -18,7 +18,7 @@ public class DateValueFormatter: IAxisValueFormatter {
             let substring = string.dropLast(5)
             dates2.append(String(substring))
         }
-        print(dates)
+        //print(dates)
         return dates2[Int(value)]
     }
 }

@@ -64,7 +64,7 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
             entries4.append(ChartDataEntry(x: Double(x), y: Double(avgDrinksArray[x])))
             
         }
-        print(entries)
+        //print(entries)
         let line1 = LineChartDataSet(entries: entries, label: "Users BAC")
         line1.colors = [NSUIColor.blue]
         let line2 = LineChartDataSet(entries: entries2, label: "Average BAC")
@@ -224,8 +224,8 @@ class TrendsViewController: UIViewController, ChartViewDelegate {
                 updatedAllDRINKSArray.append(0.0)
             }
         }
-        print("index: \(indexes)")
-        print("Updated BAC array: \(updatedAllBACArray)")
+        //print("index: \(indexes)")
+        //print("Updated BAC array: \(updatedAllBACArray)")
         return (updatedAllBACArray, updatedAllDRINKSArray)
     }
     func calculateMean(array: [Double]) -> Double {
