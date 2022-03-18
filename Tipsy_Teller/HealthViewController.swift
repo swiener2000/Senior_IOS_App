@@ -66,51 +66,35 @@ class HealthViewController: UIViewController{
     
     func highlightEffect() {
         if BAC >= 0.01 && BAC <= 0.03 {
-            one.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            oneE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            one.backgroundColor = UIColor.systemYellow
+            oneE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.04 && BAC <= 0.06 {
-            two.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            twoE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            two.backgroundColor = UIColor.systemYellow
+            twoE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.07 && BAC <= 0.09 {
-            three.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            threeE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            three.backgroundColor = UIColor.systemYellow
+            threeE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.10 && BAC <= 0.12 {
-            four.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            fourE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            four.backgroundColor = UIColor.systemYellow
+            fourE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.13 && BAC <= 0.15 {
-            five.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            fiveE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            five.backgroundColor = UIColor.systemYellow
+            fiveE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.16 && BAC <= 0.20 {
-            six.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            sixE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            six.backgroundColor = UIColor.systemYellow
+            sixE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.25 && BAC <= 0.30 {
-            seven.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            sevenE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            seven.backgroundColor = UIColor.systemYellow
+            sevenE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.35 && BAC <= 0.40 {
-            eight.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            eightE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            eight.backgroundColor = UIColor.systemYellow
+            eightE.backgroundColor = UIColor.systemYellow
         } else if BAC >= 0.40 {
-            nine.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
-            nineE.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+            nine.backgroundColor = UIColor.systemYellow
+            nineE.backgroundColor = UIColor.systemYellow
         }
     }
-    /*let username = PFUser.current()?.username
-    
-    let query = PFQuery(className: "BAC")
-    query.whereKey("Username", equalTo: username as Any)
 
-        do {
-            let results = try query.findObjects()
-            let objects = results
-            for object in objects {
-                let BAC = object.value(forKey: "BAC") as! Double
-                
-                BACarray.append(BAC)
-            }
-        } catch {
-            print(error)
-        }
-    */
     /*
     // MARK: - Navigation
 

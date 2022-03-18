@@ -381,7 +381,7 @@
                                 <rect key="frame" x="290" y="66" width="104" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Health"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Effects"/>
                                 <connections>
                                     <action selector="toHealth:" destination="9Mn-FZ-2JL" eventType="touchUpInside" id="gyi-SV-8QC"/>
                                 </connections>
@@ -418,7 +418,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuZ-ns-icG">
-                                <rect key="frame" x="20" y="72" width="100" height="45"/>
+                                <rect key="frame" x="20" y="72" width="100" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Home">
                                     <imageReference key="image" image="arrowshape.turn.up.backward" catalog="system" symbolScale="large"/>
@@ -427,226 +427,229 @@
                                     <segue destination="9Mn-FZ-2JL" kind="presentation" modalPresentationStyle="fullScreen" id="dVL-gf-uak"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Lv-iJ-2ip">
-                                <rect key="frame" x="20" y="132" width="122" height="673"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGH-IK-yeR">
+                                <rect key="frame" x="20" y="125" width="362" height="673"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="BAC" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XSl-ei-Y0k">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="mYM-BP-QQN"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".01 - .03" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-b7-FNl">
-                                        <rect key="frame" x="0.0" y="50" width="122" height="58"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="uq3-Oi-Uac"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".04 - .06" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="avu-jf-Y7J">
-                                        <rect key="frame" x="0.0" y="108" width="122" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="3up-bK-I0l"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".07 - .09" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9MZ-ld-RwI">
-                                        <rect key="frame" x="0.0" y="168" width="122" height="71"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="71" id="LpD-KR-5yS"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".10 - .12" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b3J-IK-goU">
-                                        <rect key="frame" x="0.0" y="239" width="122" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="kY7-wt-R1S"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".13 - .15" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o5J-MH-Z59">
-                                        <rect key="frame" x="0.0" y="311" width="122" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="bZe-Oh-gFD"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".16 - .20" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-4L-DnK">
-                                        <rect key="frame" x="0.0" y="383" width="122" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="QKp-Pg-f7G"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".25 - .30" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-g1-lga">
-                                        <rect key="frame" x="0.0" y="455" width="122" height="84"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".35 - .40" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JGW-3H-SuK">
-                                        <rect key="frame" x="0.0" y="539" width="122" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="I64-Kr-ZGw"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".40 and up" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5LR-gk-8qH">
-                                        <rect key="frame" x="0.0" y="611" width="122" height="62"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="62" id="Wwq-xz-hcx"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Lv-iJ-2ip">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="673"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="BAC" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XSl-ei-Y0k">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mYM-BP-QQN"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".01 - .03" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-b7-FNl">
+                                                <rect key="frame" x="0.0" y="50" width="122" height="58"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="58" id="uq3-Oi-Uac"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".04 - .06" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="avu-jf-Y7J">
+                                                <rect key="frame" x="0.0" y="108" width="122" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="3up-bK-I0l"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".07 - .09" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9MZ-ld-RwI">
+                                                <rect key="frame" x="0.0" y="168" width="122" height="71"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="71" id="LpD-KR-5yS"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".10 - .12" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b3J-IK-goU">
+                                                <rect key="frame" x="0.0" y="239" width="122" height="72"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="kY7-wt-R1S"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".13 - .15" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o5J-MH-Z59">
+                                                <rect key="frame" x="0.0" y="311" width="122" height="72"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="bZe-Oh-gFD"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".16 - .20" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-4L-DnK">
+                                                <rect key="frame" x="0.0" y="383" width="122" height="72"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="QKp-Pg-f7G"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".25 - .30" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-g1-lga">
+                                                <rect key="frame" x="0.0" y="455" width="122" height="84"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".35 - .40" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JGW-3H-SuK">
+                                                <rect key="frame" x="0.0" y="539" width="122" height="72"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="I64-Kr-ZGw"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=".40 and up" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5LR-gk-8qH">
+                                                <rect key="frame" x="0.0" y="611" width="122" height="62"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="62" id="Wwq-xz-hcx"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mdM-dv-YbF">
+                                        <rect key="frame" x="122" y="0.0" width="240" height="673"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Effects" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-dY-GeX">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="m16-pA-Nlw"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No apparent effects. Slight mood elevation." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dua-jY-QEP">
+                                                <rect key="frame" x="0.0" y="50" width="240" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Tox-ZI-cY6"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Feeling of relaxation. Sensation of warmth. Minor impairment of reasoning and memory." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mp7-Sm-YPv">
+                                                <rect key="frame" x="0.0" y="100" width="240" height="67"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="67" id="MuZ-5p-1NK"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Mild impairment of balance, speech, vision and control. It is illegal to drive or bike at this level." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="87z-Ng-ZWm">
+                                                <rect key="frame" x="0.0" y="167" width="240" height="72"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="wQf-f6-O7i"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Significant impairment of motor coordination and loss of judgment. Speech may be slurred." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-y4-297">
+                                                <rect key="frame" x="0.0" y="239" width="240" height="66"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="66" id="QHM-cU-jqu"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Gross impairment of motor control. Blurred vision and major loss of balance. Onset of dysphoria (anxiety, restlessness)." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="brD-fy-u7G">
+                                                <rect key="frame" x="0.0" y="305" width="240" height="82"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="82" id="Rt7-IU-CTT"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dysphoria predominates. Nausea may appear. Drinker has the appearance of “sloppy drunk.”" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-KC-scl">
+                                                <rect key="frame" x="0.0" y="387" width="240" height="68"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="eqd-Ye-8kc"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Severe intoxication. Needs assistance walking. Mental confusion. Dysphoria with nausea and some vomiting." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-tO-zAF">
+                                                <rect key="frame" x="0.0" y="455" width="240" height="88"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loss of consciousness. Brink of coma." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EHi-It-Mxy">
+                                                <rect key="frame" x="0.0" y="543" width="240" height="68"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="sto-Nz-8Dz"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Onset of coma. Likelihood of death due to respiratory failure." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2tu-uE-oO7">
+                                                <rect key="frame" x="0.0" y="611" width="240" height="62"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="62" id="S91-kt-rPd"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mdM-dv-YbF">
-                                <rect key="frame" x="150" y="132" width="240" height="673"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Effects" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-dY-GeX">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="m16-pA-Nlw"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No apparent effects. Slight mood elevation." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dua-jY-QEP">
-                                        <rect key="frame" x="0.0" y="50" width="240" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Tox-ZI-cY6"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Feeling of relaxation. Sensation of warmth. Minor impairment of reasoning and memory." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mp7-Sm-YPv">
-                                        <rect key="frame" x="0.0" y="100" width="240" height="67"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="67" id="MuZ-5p-1NK"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Mild impairment of balance, speech, vision and control. It is illegal to drive or bike at this level." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="87z-Ng-ZWm">
-                                        <rect key="frame" x="0.0" y="167" width="240" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="wQf-f6-O7i"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Significant impairment of motor coordination and loss of judgment. Speech may be slurred." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-y4-297">
-                                        <rect key="frame" x="0.0" y="239" width="240" height="66"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="QHM-cU-jqu"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Gross impairment of motor control. Blurred vision and major loss of balance. Onset of dysphoria (anxiety, restlessness)." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="brD-fy-u7G">
-                                        <rect key="frame" x="0.0" y="305" width="240" height="82"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="82" id="Rt7-IU-CTT"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dysphoria predominates. Nausea may appear. Drinker has the appearance of “sloppy drunk.”" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-KC-scl">
-                                        <rect key="frame" x="0.0" y="387" width="240" height="68"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="eqd-Ye-8kc"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Severe intoxication. Needs assistance walking. Mental confusion. Dysphoria with nausea and some vomiting." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-tO-zAF">
-                                        <rect key="frame" x="0.0" y="455" width="240" height="88"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loss of consciousness. Brink of coma." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EHi-It-Mxy">
-                                        <rect key="frame" x="0.0" y="543" width="240" height="68"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="sto-Nz-8Dz"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Onset of coma. Likelihood of death due to respiratory failure." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2tu-uE-oO7">
-                                        <rect key="frame" x="0.0" y="611" width="240" height="62"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="62" id="S91-kt-rPd"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mdM-dv-YbF" firstAttribute="leading" secondItem="CGH-IK-yeR" secondAttribute="leading" constant="122" id="Yue-0f-4on"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5gp-sl-5pm"/>
                         <color key="backgroundColor" red="0.96210664509999999" green="0.76171058420000004" blue="0.41560238599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mdM-dv-YbF" firstAttribute="top" secondItem="5gp-sl-5pm" secondAttribute="top" constant="88" id="DEk-9l-YYF"/>
-                            <constraint firstItem="5gp-sl-5pm" firstAttribute="bottom" secondItem="2Lv-iJ-2ip" secondAttribute="bottom" constant="57" id="EPt-C6-Ma4"/>
-                            <constraint firstItem="mdM-dv-YbF" firstAttribute="leading" secondItem="2Lv-iJ-2ip" secondAttribute="trailing" constant="8" id="Emd-FD-ewp"/>
                             <constraint firstItem="kuZ-ns-icG" firstAttribute="top" secondItem="5gp-sl-5pm" secondAttribute="top" constant="28" id="GCz-Xx-w1f"/>
-                            <constraint firstItem="2Lv-iJ-2ip" firstAttribute="top" secondItem="mdM-dv-YbF" secondAttribute="top" id="GUU-2F-weW"/>
-                            <constraint firstItem="mdM-dv-YbF" firstAttribute="leading" secondItem="H5t-NG-nJV" secondAttribute="leading" constant="150" id="HB0-iS-m46"/>
                             <constraint firstItem="5gp-sl-5pm" firstAttribute="trailing" secondItem="kuZ-ns-icG" secondAttribute="trailing" constant="294" id="K0A-45-Zt2"/>
-                            <constraint firstItem="kuZ-ns-icG" firstAttribute="leading" secondItem="2Lv-iJ-2ip" secondAttribute="leading" id="XYL-Py-fa0"/>
+                            <constraint firstItem="5gp-sl-5pm" firstAttribute="bottom" secondItem="CGH-IK-yeR" secondAttribute="bottom" constant="64" id="LFX-bc-emN"/>
+                            <constraint firstItem="CGH-IK-yeR" firstAttribute="top" secondItem="kuZ-ns-icG" secondAttribute="bottom" constant="22" id="dF4-bP-6b7"/>
+                            <constraint firstItem="5gp-sl-5pm" firstAttribute="trailing" secondItem="CGH-IK-yeR" secondAttribute="trailing" constant="32" id="hMf-LH-2Jf"/>
                             <constraint firstItem="kuZ-ns-icG" firstAttribute="leading" secondItem="H5t-NG-nJV" secondAttribute="leadingMargin" id="oNy-aB-hSl"/>
-                            <constraint firstItem="5gp-sl-5pm" firstAttribute="trailing" secondItem="mdM-dv-YbF" secondAttribute="trailing" constant="24" id="oSA-WC-G7L"/>
-                            <constraint firstItem="2Lv-iJ-2ip" firstAttribute="top" secondItem="kuZ-ns-icG" secondAttribute="bottom" constant="15" id="ptb-2o-X34"/>
-                            <constraint firstItem="2Lv-iJ-2ip" firstAttribute="bottom" secondItem="mdM-dv-YbF" secondAttribute="bottom" id="uRK-8g-amg"/>
+                            <constraint firstItem="CGH-IK-yeR" firstAttribute="leading" secondItem="kuZ-ns-icG" secondAttribute="leading" id="sTb-xX-b29"/>
                         </constraints>
                     </view>
                     <connections>
