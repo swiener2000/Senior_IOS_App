@@ -22,9 +22,13 @@ class LoginViewController: UIViewController {
               (user: PFUser?, error: Error?) -> Void in
               if user != nil {
                   print("login successful")
-                  let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
-                  viewController.modalPresentationStyle = .fullScreen
-                  self.present(viewController, animated: true)
+                  let alert = UIAlertController(title: "Warning!", message: "This app is not intended for the purpose on whether an individual can drive or if it's affecting their health. Please consult a doctor for health effects or use a breathalyzer to determine an accurate BAC not calculated based on Widmark's formula.", preferredStyle: .alert)
+                  alert.addAction(UIAlertAction(title: "I understand", style: .default, handler: { (_) in
+                      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
+                      viewController.modalPresentationStyle = .fullScreen
+                      self.present(viewController, animated: true)
+                  }))
+                  self.present(alert, animated: true, completion: nil)
               } else {
                 print("login unsuccessful")
                   let alert = UIAlertController(title: "Username or Password Incorrect", message: "Username and password combination does not exist, please try again", preferredStyle: .alert)

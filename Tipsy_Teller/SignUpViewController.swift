@@ -24,12 +24,19 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var cocktailNames: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        showAlert()
         self.hideKeyboardWhenTappedAround() 
         cocktailNames = queryDrinks()
         self.favDrinkSignup.delegate = self
         self.favDrinkSignup.dataSource = self
     }
-    
+    func showAlert() {
+        let alert = UIAlertController(title: "Warning!", message: "This app is not intended for the purpose on whether an individual can drive or if it's affecting their health. Please consult a doctor for health effects or use a breathalyzer to determine an accurate BAC not calculated based on Widmark's formula", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "I understand", style: .default, handler: { (_) in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let currentValue = Int(sender.value)
                 
@@ -58,9 +65,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                             self.present(alert, animated: true, completion: nil)
                 } else {
                     print("Account has been successfully created")
-                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
-                    viewController.modalPresentationStyle = .fullScreen
-                    self.present(viewController, animated: true)
+                    let alert = UIAlertController(title: "Warning!", message: "This app is not intended for the purpose on whether an individual can drive or if it's affecting their health. Please consult a doctor for health effects or use a breathalyzer to determine an accurate BAC not calculated based on Widmark's formula", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "I understand", style: .default, handler: { (_) in
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
+                        viewController.modalPresentationStyle = .fullScreen
+                        self.present(viewController, animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
             }
         }
