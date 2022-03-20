@@ -33,7 +33,7 @@ class DrinkViewController: UIViewController {
     @IBOutlet weak var drivingIndicator1: UITextField!
     @IBOutlet weak var drivingIndicator2: UITextField!
     
-    @IBOutlet weak var wineButton: UIButton!
+    @IBOutlet weak var wineButton: UIButton?
     @IBOutlet weak var beerButton: UIButton!
     @IBOutlet weak var liquorButton: UIButton!
     @IBOutlet weak var maltButton: UIButton!
@@ -478,7 +478,7 @@ class DrinkViewController: UIViewController {
                 let timediff = getDateDiff(start: TodayUpdatedAt, end: Date())
                 //print(timediff)
                 print("TodayCount \(TodayCount)")
-                if TodayCount <= 36000 {
+                if TodayCount + timediff <= 36000 {
                     print("TodayCount \(TodayCount)")
                     timerCounting = true
                     //startStopButton.setTitle("STOP", for: .normal)
@@ -506,7 +506,7 @@ class DrinkViewController: UIViewController {
                 let timediff = getDateDiff(start: YesterdayUpdatedAt, end: Date())
                 //print(timediff)
                 print("YesterdayCount \(YesterdayCount)")
-                if YesterdayCount <= 36000 {
+                if YesterdayCount + timediff <= 36000 {
                     print("YesterdayCount \(YesterdayCount)")
                     timerCounting = true
                     //startStopButton.setTitle("STOP", for: .normal)
@@ -539,6 +539,8 @@ class DrinkViewController: UIViewController {
             if (Newbac >= 0.0) {
                 print("bac \(bac)")
                 bac = Newbac
+            } else {
+                bac = 0.0
             }
         }
         
@@ -572,7 +574,10 @@ class DrinkViewController: UIViewController {
             self.drivingIndicator1.text = "You have reached dangerous level!"
             self.drivingIndicator2.isHidden = false
             self.drivingIndicator2.text = "NO DRIVING ALLOWED!!"
-        } else {
+        } else if bac == 0.0 {
+            self.drivingIndicator1.text = "You are safe to drive!"
+            self.drivingIndicator2.isHidden = true
+        }else {
             self.drivingIndicator1.text = "STOP DRINKING!!"
             self.drivingIndicator2.isHidden = false
             self.drivingIndicator2.text = "You are way past the safe levels"

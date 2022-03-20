@@ -10,19 +10,31 @@
 		4FDF82CFC836EDFD0A7BDC12 /* Pods_Tipsy_Teller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82DD8609B353F7E21F06B6F /* Pods_Tipsy_Teller.framework */; };
 		EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B1288279B4F2E0057D162 /* AppDelegate.swift */; };
 		EC1B128B279B4F2E0057D162 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B128A279B4F2E0057D162 /* SceneDelegate.swift */; };
-		EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B128C279B4F2E0057D162 /* ViewController.swift */; };
 		EC1B1290279B4F2E0057D162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B128E279B4F2E0057D162 /* Main.storyboard */; };
 		EC1B1292279B4F350057D162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1291279B4F350057D162 /* Assets.xcassets */; };
 		EC1B1295279B4F350057D162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B1293279B4F350057D162 /* LaunchScreen.storyboard */; };
 		EC4FA407279C5C4600C2EB78 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */; };
 		EC7C329827DD4E07009A2A6F /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C329727DD4E07009A2A6F /* DateValueFormatter.swift */; };
 		EC7C329A27DF9C00009A2A6F /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C329927DF9C00009A2A6F /* HealthViewController.swift */; };
+		EC7C32AF27E539D2009A2A6F /* Tipsy_TellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C32AE27E539D2009A2A6F /* Tipsy_TellerTests.swift */; };
+		EC7C32B627E79177009A2A6F /* drinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C32B527E79177009A2A6F /* drinkTests.swift */; };
+		EC7C32BA27E7AF61009A2A6F /* drinkMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7C32B927E7AF61009A2A6F /* drinkMTests.swift */; };
 		ECCAF73B27C463A200FC6BFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */; };
 		ECE9FE2E27A5A45700964AF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */; };
 		ECE9FE3027A5A49800964AF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */; };
 		ECE9FE3227A5A4B500964AF6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE3127A5A4B500964AF6 /* SignUpViewController.swift */; };
 		ECE9FE3427A5FADE00964AF6 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9FE3327A5FADE00964AF6 /* TrendsViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC7C32B027E539D2009A2A6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC1B127D279B4F2E0057D162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC1B1284279B4F2E0057D162;
+			remoteInfo = Tipsy_Teller;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09B9DC943C0FA791D9A912C2 /* Pods-Tipsy_Teller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tipsy_Teller.debug.xcconfig"; path = "Target Support Files/Pods-Tipsy_Teller/Pods-Tipsy_Teller.debug.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +51,10 @@
 		EC4FA406279C5C4600C2EB78 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		EC7C329727DD4E07009A2A6F /* DateValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		EC7C329927DF9C00009A2A6F /* HealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
+		EC7C32AC27E539D2009A2A6F /* Tipsy_TellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tipsy_TellerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7C32AE27E539D2009A2A6F /* Tipsy_TellerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tipsy_TellerTests.swift; sourceTree = "<group>"; };
+		EC7C32B527E79177009A2A6F /* drinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinkTests.swift; sourceTree = "<group>"; };
+		EC7C32B927E7AF61009A2A6F /* drinkMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = drinkMTests.swift; path = Tipsy_TellerTests/MethodTests/drinkMTests.swift; sourceTree = SOURCE_ROOT; };
 		ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ECE9FE2D27A5A45700964AF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECE9FE2F27A5A49800964AF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +68,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FDF82CFC836EDFD0A7BDC12 /* Pods_Tipsy_Teller.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7C32A927E539D2009A2A6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				EC1B1287279B4F2E0057D162 /* Tipsy_Teller */,
+				EC7C32AD27E539D2009A2A6F /* Tipsy_TellerTests */,
 				EC1B1286279B4F2E0057D162 /* Products */,
 				7CF891CD5EC0E9EC431D1485 /* Pods */,
 				FE214A46D05E8CBA7AA6D923 /* Frameworks */,
@@ -81,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				EC1B1285279B4F2E0057D162 /* Tipsy_Teller.app */,
+				EC7C32AC27E539D2009A2A6F /* Tipsy_TellerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +130,32 @@
 				ECCAF73A27C463A200FC6BFD /* ProfileViewController.swift */,
 			);
 			path = Tipsy_Teller;
+			sourceTree = "<group>";
+		};
+		EC7C32AD27E539D2009A2A6F /* Tipsy_TellerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7C32B827E7AF2A009A2A6F /* MethodTests */,
+				EC7C32B727E7AE11009A2A6F /* ButtonTests */,
+				EC7C32AE27E539D2009A2A6F /* Tipsy_TellerTests.swift */,
+			);
+			path = Tipsy_TellerTests;
+			sourceTree = "<group>";
+		};
+		EC7C32B727E7AE11009A2A6F /* ButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7C32B927E7AF61009A2A6F /* drinkMTests.swift */,
+				EC7C32B527E79177009A2A6F /* drinkTests.swift */,
+			);
+			path = ButtonTests;
+			sourceTree = "<group>";
+		};
+		EC7C32B827E7AF2A009A2A6F /* MethodTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MethodTests;
 			sourceTree = "<group>";
 		};
 		FE214A46D05E8CBA7AA6D923 /* Frameworks */ = {
@@ -137,6 +188,24 @@
 			productReference = EC1B1285279B4F2E0057D162 /* Tipsy_Teller.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EC7C32AB27E539D2009A2A6F /* Tipsy_TellerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7C32B227E539D2009A2A6F /* Build configuration list for PBXNativeTarget "Tipsy_TellerTests" */;
+			buildPhases = (
+				EC7C32A827E539D2009A2A6F /* Sources */,
+				EC7C32A927E539D2009A2A6F /* Frameworks */,
+				EC7C32AA27E539D2009A2A6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7C32B127E539D2009A2A6F /* PBXTargetDependency */,
+			);
+			name = Tipsy_TellerTests;
+			productName = Tipsy_TellerTests;
+			productReference = EC7C32AC27E539D2009A2A6F /* Tipsy_TellerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,11 +213,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					EC1B1284279B4F2E0057D162 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					EC7C32AB27E539D2009A2A6F = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = EC1B1284279B4F2E0057D162;
 					};
 				};
 			};
@@ -166,6 +239,7 @@
 			projectRoot = "";
 			targets = (
 				EC1B1284279B4F2E0057D162 /* Tipsy_Teller */,
+				EC7C32AB27E539D2009A2A6F /* Tipsy_TellerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -178,6 +252,13 @@
 				EC1B1295279B4F350057D162 /* LaunchScreen.storyboard in Resources */,
 				EC1B1292279B4F350057D162 /* Assets.xcassets in Resources */,
 				EC1B1290279B4F2E0057D162 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7C32AA27E539D2009A2A6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +314,6 @@
 				ECE9FE3027A5A49800964AF6 /* LoginViewController.swift in Sources */,
 				ECE9FE3227A5A4B500964AF6 /* SignUpViewController.swift in Sources */,
 				ECE9FE2E27A5A45700964AF6 /* HomeViewController.swift in Sources */,
-				EC1B128D279B4F2E0057D162 /* ViewController.swift in Sources */,
 				ECE9FE3427A5FADE00964AF6 /* TrendsViewController.swift in Sources */,
 				EC1B1289279B4F2E0057D162 /* AppDelegate.swift in Sources */,
 				EC7C329827DD4E07009A2A6F /* DateValueFormatter.swift in Sources */,
@@ -244,7 +324,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC7C32A827E539D2009A2A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7C32B627E79177009A2A6F /* drinkTests.swift in Sources */,
+				EC7C32AF27E539D2009A2A6F /* Tipsy_TellerTests.swift in Sources */,
+				EC7C32BA27E7AF61009A2A6F /* drinkMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC7C32B127E539D2009A2A6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC1B1284279B4F2E0057D162 /* Tipsy_Teller */;
+			targetProxy = EC7C32B027E539D2009A2A6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC1B128E279B4F2E0057D162 /* Main.storyboard */ = {
@@ -389,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UFL58TXUUH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tipsy_Teller/Info.plist;
@@ -402,7 +500,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Stephanie-Wiener.Tipsy-Teller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -418,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UFL58TXUUH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tipsy_Teller/Info.plist;
@@ -431,12 +529,50 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Stephanie-Wiener.Tipsy-Teller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC7C32B327E539D2009A2A6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UFL58TXUUH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Stephanie-Wiener.Tipsy-TellerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tipsy_Teller.app/Tipsy_Teller";
+			};
+			name = Debug;
+		};
+		EC7C32B427E539D2009A2A6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UFL58TXUUH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Stephanie-Wiener.Tipsy-TellerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tipsy_Teller.app/Tipsy_Teller";
 			};
 			name = Release;
 		};
@@ -457,6 +593,15 @@
 			buildConfigurations = (
 				EC1B129A279B4F350057D162 /* Debug */,
 				EC1B129B279B4F350057D162 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7C32B227E539D2009A2A6F /* Build configuration list for PBXNativeTarget "Tipsy_TellerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7C32B327E539D2009A2A6F /* Debug */,
+				EC7C32B427E539D2009A2A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
