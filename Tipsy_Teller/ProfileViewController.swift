@@ -16,6 +16,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var favDrinkLabel: UILabel!
     
+    @IBOutlet weak var saveName: UIButton!
+    @IBOutlet weak var updateFirst: UITextField!
+    @IBOutlet weak var updateLast: UITextField!
+    @IBOutlet weak var updateName: UIButton!
+    @IBOutlet weak var updateGender: UIButton!
+    @IBOutlet weak var gender: UISegmentedControl!
+    @IBOutlet weak var saveGender: UIButton!
     var r: Double = 0.0
 
     override func viewDidLoad() {
@@ -53,6 +60,56 @@ class ProfileViewController: UIViewController {
         self.present(viewController, animated: true, completion: nil)
     }
     
+    @IBAction func updateName(_ sender: Any) {
+        //hides orginal info
+        updateName.isHidden = true
+        firstNameLabel.isHidden = true
+        lastNameLabel.isHidden = true
+        //opens editing
+        updateFirst.isHidden = false
+        updateLast.isHidden = false
+        saveName.isHidden = false
+    }
+    @IBAction func saveName(_ sender: Any) {
+        let newFirst = updateFirst.text
+        let newLast = updateLast.text
+        firstNameLabel.text = newFirst
+        lastNameLabel.text = newLast
+        var currentUser = PFUser.current()
+        if currentUser != nil {
+            currentUser?["First_Name"] = newFirst
+            currentUser?["Last_Name"] = newLast
+
+            currentUser?.saveInBackground()
+        }
+        updateName.isHidden = true
+        firstNameLabel.isHidden = false
+        lastNameLabel.isHidden = false
+        //opens editing
+        updateFirst.isHidden = true
+        updateLast.isHidden = true
+        saveName.isHidden = true
+    }
+    @IBAction func updateGender(_ sender: Any) {
+        updateGender.isHidden = true
+        genderLabel.isHidden = true
+        
+        gender.isHidden = false
+        saveGender.isHidden = false
+    }
+    @IBAction func saveGender(_ sender: Any) {
+        var currentUser = PFUser.current()
+        if currentUser != nil {
+            currentUser?["Gender"] = self.gender.selectedSegmentIndex
+
+            currentUser?.saveInBackground()
+        }
+        updateGender.isHidden = true
+        genderLabel.isHidden = false
+        
+        gender.isHidden = true
+        saveGender.isHidden = true
+    }
     /*
     // MARK: - Navigation
 
