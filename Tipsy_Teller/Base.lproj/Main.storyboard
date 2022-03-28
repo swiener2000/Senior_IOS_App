@@ -1074,6 +1074,21 @@
                                             <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="updateWeight:" destination="JEA-Al-8O2" eventType="touchUpInside" id="gqJ-oY-Kw3"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqf-Jf-xc0">
+                                        <rect key="frame" x="249" y="341" width="105" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="Save Weight">
+                                            <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveWeight:" destination="JEA-Al-8O2" eventType="touchUpInside" id="awo-fn-jCO"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzA-n1-Bks">
                                         <rect key="frame" x="187" y="188" width="167" height="34"/>
@@ -1082,15 +1097,6 @@
                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsd-en-5Ko">
-                                        <rect key="frame" x="249" y="432" width="105" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                        <state key="normal" title="Update Drink">
-                                            <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-Pz-0i5">
                                         <rect key="frame" x="8" y="187" width="167" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1115,11 +1121,9 @@
                                             <action selector="updateName:" destination="JEA-Al-8O2" eventType="touchUpInside" id="HcS-T2-kgY"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lGC-BJ-XSe">
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lGC-BJ-XSe">
                                         <rect key="frame" x="8" y="304" width="338" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="aTh-nD-7uo"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Female"/>
                                             <segment title="Male"/>
@@ -1137,6 +1141,48 @@
                                             <action selector="saveGender:" destination="JEA-Al-8O2" eventType="touchUpInside" id="Taf-26-mWN"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13q-Ru-GUY">
+                                        <rect key="frame" x="11" y="348" width="219" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="5FS-Fv-2r8">
+                                        <rect key="frame" x="9" y="385" width="342" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="JEA-Al-8O2" eventType="valueChanged" id="Oet-rl-jnx"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsd-en-5Ko">
+                                        <rect key="frame" x="70" y="460" width="105" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="Update Drink">
+                                            <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateDrink:" destination="JEA-Al-8O2" eventType="touchUpInside" id="c8f-ND-zgq"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-PS-bqb">
+                                        <rect key="frame" x="8" y="498" width="340" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-9T-Wb6">
+                                        <rect key="frame" x="193" y="460" width="105" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="Save Drink">
+                                            <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveDrink:" destination="JEA-Al-8O2" eventType="touchUpInside" id="2eP-af-PxI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1148,18 +1194,25 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="favDrinkLabel" destination="1ge-9M-vzC" id="bQ8-aH-8d5"/>
+                        <outlet property="favDrinkPicker" destination="AzV-PS-bqb" id="HkL-Nh-QcB"/>
                         <outlet property="firstNameLabel" destination="rbq-cR-CKW" id="nDQ-0f-t3K"/>
                         <outlet property="gender" destination="lGC-BJ-XSe" id="6zE-FX-xAY"/>
                         <outlet property="genderLabel" destination="Tom-Jw-FdJ" id="lNm-ds-K2R"/>
                         <outlet property="lastNameLabel" destination="DzA-n1-Bks" id="6fZ-Ue-zFK"/>
+                        <outlet property="saveDrink" destination="Yhx-9T-Wb6" id="KVl-m0-dSF"/>
                         <outlet property="saveGender" destination="78w-lU-wdS" id="phM-wk-Pkm"/>
                         <outlet property="saveName" destination="FsE-DG-7fX" id="1Fi-S9-Vli"/>
+                        <outlet property="saveWeight" destination="gqf-Jf-xc0" id="Jse-TQ-aLa"/>
+                        <outlet property="updateDrink" destination="wsd-en-5Ko" id="1SJ-9B-Jqn"/>
                         <outlet property="updateFirst" destination="Yvh-Pz-0i5" id="QMR-sm-1uH"/>
                         <outlet property="updateGender" destination="64s-DL-8F8" id="lZd-g5-Qpw"/>
                         <outlet property="updateLast" destination="4kc-QV-54G" id="EXb-7a-jON"/>
                         <outlet property="updateName" destination="ivd-no-vLw" id="W2u-Ew-yXy"/>
+                        <outlet property="updateWeight" destination="kNF-dw-Rpu" id="tl4-m3-KjA"/>
                         <outlet property="userNameLabel" destination="Gns-ja-yck" id="sVT-4t-noj"/>
-                        <outlet property="weightLabel" destination="nfL-UH-mZP" id="bzP-Gn-fMx"/>
+                        <outlet property="weightLabel" destination="nfL-UH-mZP" id="rYo-Y9-2ia"/>
+                        <outlet property="weightLabelUpdate" destination="13q-Ru-GUY" id="EPb-Sh-uJu"/>
+                        <outlet property="weightSlider" destination="5FS-Fv-2r8" id="Ifv-xj-AQP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEI-gn-4La" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
