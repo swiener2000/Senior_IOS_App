@@ -67,6 +67,7 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func backToHome(_ sender: Any) {
+        print("Button Clicked")
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
