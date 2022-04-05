@@ -65,31 +65,39 @@ class HealthViewController: UIViewController{
     }
     
     func highlightEffect() {
-        if BAC >= 0.01 && BAC <= 0.03 {
+        print("Starting")
+        if BAC >= 0.01 && BAC <= 0.039999  {
+            print(".02")
             one.backgroundColor = UIColor.systemYellow
             oneE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.04 && BAC <= 0.06 {
+        } else if BAC >= 0.04 && BAC <= 0.069999 {
+            print(".05")
             two.backgroundColor = UIColor.systemYellow
             twoE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.07 && BAC <= 0.09 {
+        } else if BAC >= 0.07 && BAC <= 0.099999  {
+            print(".08")
             three.backgroundColor = UIColor.systemYellow
             threeE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.10 && BAC <= 0.12 {
+        } else if BAC >= 0.10 && BAC <= 0.129999  {
+            print(".11")
             four.backgroundColor = UIColor.systemYellow
             fourE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.13 && BAC <= 0.15 {
+        } else if BAC >= 0.13 && BAC <= 0.159999  {
+            print(".14")
             five.backgroundColor = UIColor.systemYellow
             fiveE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.16 && BAC <= 0.20 {
+        } else if BAC >= 0.16 && BAC <= 0.209999  {
+            print(".18")
             six.backgroundColor = UIColor.systemYellow
             sixE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.25 && BAC <= 0.30 {
+        } else if BAC >= 0.25 && BAC <= 0.309999  {
+            print(".26")
             seven.backgroundColor = UIColor.systemYellow
             sevenE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.35 && BAC <= 0.40 {
+        } else if BAC >= 0.35 && BAC <= 0.49999  {
             eight.backgroundColor = UIColor.systemYellow
             eightE.backgroundColor = UIColor.systemYellow
-        } else if BAC >= 0.40 {
+        } else if BAC >= 0.49999  {
             nine.backgroundColor = UIColor.systemYellow
             nineE.backgroundColor = UIColor.systemYellow
         }
