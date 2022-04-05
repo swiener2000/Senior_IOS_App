@@ -64,7 +64,9 @@ class DrinkViewController: UIViewController {
         size4Button.isHidden = true
     }
     
-    
+    /*
+     Function to bring user to home screen
+     */
     @IBAction func backToHome(_ sender: Any) {
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         viewController.modalPresentationStyle = .fullScreen
@@ -73,6 +75,11 @@ class DrinkViewController: UIViewController {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
     }
+    /*
+     Called when the button is hit
+     unhides size buttons
+     sets boolean for BAC calculation
+     */
     @IBAction func wineButton(_ sender: Any) {
         size1Button.isHidden = false
         size2Button.isHidden = false
@@ -84,7 +91,11 @@ class DrinkViewController: UIViewController {
         size4Button.setImage(UIImage(named: "40oz_wine.svg"), for: .normal)
         isWine = true
     }
-    
+    /*
+     Called when the button is hit
+     unhides size buttons
+     sets boolean for BAC calculation
+     */
     @IBAction func maltButton(_ sender: Any) {
         size1Button.isHidden = false
         size2Button.isHidden = false
@@ -96,6 +107,11 @@ class DrinkViewController: UIViewController {
         size4Button.setImage(UIImage(named: "40oz_malt.svg"), for: .normal)
         isMalt = true
     }
+    /*
+     Called when the button is hit
+     unhides size buttons
+     sets boolean for BAC calculation
+     */
     @IBAction func liquorButton(_ sender: Any) {
         size1Button.isHidden = false
         size2Button.isHidden = false
@@ -107,6 +123,11 @@ class DrinkViewController: UIViewController {
         size4Button.setImage(UIImage(named: "40oz_liquor.svg"), for: .normal)
         isLiquor = true
     }
+    /*
+     Called when the button is hit
+     unhides size buttons
+     sets boolean for BAC calculation
+     */
     @IBAction func beerButton(_ sender: Any) {
         size1Button.isHidden = false
         size2Button.isHidden = false
@@ -118,6 +139,9 @@ class DrinkViewController: UIViewController {
         size4Button.setImage(UIImage(named: "40oz_beer.svg"), for: .normal)
         isBeer = true
     }
+    /*
+     Loads users profile to be used in BAC calculation
+     */
     func loadProfile() {
         let firstname = PFUser.current()?["First_Name"] as? String
         let lastname = PFUser.current()?["Last_Name"] as? String
@@ -138,7 +162,9 @@ class DrinkViewController: UIViewController {
         }
         favDrinkButton.setTitle(favDrink, for: .normal)
     }
-
+    /*
+     Called when the button is hit
+     */
     @IBAction func favDrinkBac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
@@ -177,6 +203,10 @@ class DrinkViewController: UIViewController {
        showAlert()
         drivingIndicatorCheck()
     }
+    /*
+     Called when the button is hit
+     calls BAC calculation function for whichever boolean is true from previous buttons
+     */
     @IBAction func size1Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
@@ -214,7 +244,10 @@ class DrinkViewController: UIViewController {
         size3Button.isHidden = true
         size4Button.isHidden = true
     }
-    
+    /*
+     Called when the button is hit
+     calls BAC calculation function for whichever boolean is true from previous buttons
+     */
     @IBAction func size2Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
@@ -252,6 +285,10 @@ class DrinkViewController: UIViewController {
         size3Button.isHidden = true
         size4Button.isHidden = true
     }
+    /*
+     Called when the button is hit
+     calls BAC calculation function for whichever boolean is true from previous buttons
+     */
     @IBAction func size3Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
@@ -289,6 +326,10 @@ class DrinkViewController: UIViewController {
         size3Button.isHidden = true
         size4Button.isHidden = true
     }
+    /*
+     Called when the button is hit
+     calls BAC calculation function for whichever boolean is true from previous buttons
+     */
     @IBAction func size4Bac(_ sender: Any) {
         if drinkCount == 0 {
             timerCounting = true
@@ -326,6 +367,9 @@ class DrinkViewController: UIViewController {
         size3Button.isHidden = true
         size4Button.isHidden = true
     }
+    /*
+     Calculates Blood Alcohol Concentration
+     */
     func bacCalc(weight: Int, r: Double, drinks: Double, BAC: Double) -> Double {
         var bac = BAC
         let grams = 454
@@ -335,7 +379,9 @@ class DrinkViewController: UIViewController {
         return bac
     }
 
-    
+    /*
+     Timer functions
+     */
     @objc func timerCounter() -> Void
         {
             count = count + 1
@@ -360,12 +406,18 @@ class DrinkViewController: UIViewController {
             timeString += String(format: "%02d", seconds)
             return timeString
         }
+    /*
+     Shows alert after each drink is enter to prevent fall entries
+     */
     func showAlert() {
         let alertController = UIAlertController(title:"Drink Entered",message:nil,preferredStyle:.alert)
         self.present(alertController,animated:true,completion:{Timer.scheduledTimer(withTimeInterval: 5, repeats:false, block: {_ in
             self.dismiss(animated: true, completion: nil)
         })})
     }
+    /*
+     Adjusts BAC every hour
+     */
     func adjustBac() {
         if count % 3600 == 0 {
             bac = bac - 0.015
@@ -374,6 +426,9 @@ class DrinkViewController: UIViewController {
         BACLabel.text = "BAC: \(bacRounded)"
         drivingIndicatorCheck()
     }
+    /*
+     Sends calculated BAC to database
+     */
     func sendBAC() {
         let date = Date()
         let date2 = getDate()
@@ -401,6 +456,9 @@ class DrinkViewController: UIViewController {
         }
         drivingIndicatorCheck()
     }
+    /*
+     Updates BAC in database
+     */
     func updateBAC(username: String, BAC: Double, Date: NSDate, Drinks: Int, Date2: String, Count: Int) {
         let objectid: String = objectID
         print("Object ID \(objectid)")
@@ -421,6 +479,9 @@ class DrinkViewController: UIViewController {
         }
         drivingIndicatorCheck()
     }
+    /*
+     Gets date
+     */
     func getDate() -> String {
         let date = Date()
         print("Date: \(date)")
@@ -429,6 +490,9 @@ class DrinkViewController: UIViewController {
         //print(dateFormatter.string(from: date))
         return dateFormatter.string(from: date)
     }
+    /*
+     Checks if timer has previously been running for today and yesterday and if it is within 10 hours
+     */
     func checkIfTimerIsRunning() {
         let query = PFQuery(className:"BAC")
         let user = PFUser.current()?.username as Any
@@ -529,6 +593,9 @@ class DrinkViewController: UIViewController {
         drivingIndicatorCheck()
         //print(DateArray)
     }
+    /*
+     Update BAC based on the amount of time that has passed since the app was open
+     */
     func updateBACtimePast(Hours: Double) {
         let updateValue = Hours * 0.015
         var Newbac = 0.0
@@ -549,12 +616,18 @@ class DrinkViewController: UIViewController {
         let bacRounded = round(bac * 1000) / 1000.0
         BACLabel.text = "BAC: \(bacRounded)"
     }
+    /*
+     get the number of hours that has passed since the last time on the page
+     */
     func getHoursPast(timediff: Int){
         let hours: Int
         hours = timediff / 3600
         print("Hours: \(Double(hours)) ")
         updateBACtimePast(Hours: Double(hours))
     }
+    /*
+     get the difference in time
+     */
     func getDateDiff(start: Date, end: Date) -> Int  {
         let calendar = Calendar.current
         let dateComponents = calendar.dateComponents([Calendar.Component.second], from: start, to: end)
@@ -562,6 +635,9 @@ class DrinkViewController: UIViewController {
         let seconds = dateComponents.second
         return Int(seconds!)
     }
+    /*
+     sets a indicator based on BAC 
+     */
     func drivingIndicatorCheck() {
         if bac < 0.08 && bac >= 0.01 {
             self.drivingIndicator1.text = "You are safe to drive!"

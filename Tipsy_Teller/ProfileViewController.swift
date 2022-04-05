@@ -128,7 +128,11 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         print("Finished Query")
         return cocktails
     }
-    
+    /*
+     Makes fields available for users to change their name on their profile
+     Unhides save button
+     Hides update button
+     */
     @IBAction func updateName(_ sender: Any) {
         //hides orginal info
         updateName.isHidden = true
@@ -139,6 +143,10 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         updateLast.isHidden = false
         saveName.isHidden = false
     }
+    /*
+     Hides update fields
+     Saves new name to database and changes label on profile screen
+     */
     @IBAction func saveName(_ sender: Any) {
         let newFirst = updateFirst.text
         let newLast = updateLast.text
@@ -159,6 +167,11 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         updateLast.isHidden = true
         saveName.isHidden = true
     }
+    /*
+     Makes fields available for users to change their gender on their profile
+     Unhides save button
+     Hides update button
+     */
     @IBAction func updateGender(_ sender: Any) {
         updateGender.isHidden = true
         genderLabel.isHidden = true
@@ -166,6 +179,10 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         gender.isHidden = false
         saveGender.isHidden = false
     }
+    /*
+     Hides update fields
+     Saves new gender to database and changes label on profile screen
+     */
     @IBAction func saveGender(_ sender: Any) {
         let currentUser = PFUser.current()
         if currentUser != nil {
@@ -187,6 +204,11 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         gender.isHidden = true
         saveGender.isHidden = true
     }
+    /*
+     Makes fields available for users to change their weight on their profile
+     Unhides save button
+     Hides update button
+     */
     @IBAction func updateWeight(_ sender: Any) {
         updateWeight.isHidden = true
         weightLabel.isHidden = true
@@ -195,6 +217,10 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         weightSlider.isHidden = false
         saveWeight.isHidden = false
     }
+    /*
+     Hides update fields
+     Saves new weight to database and changes label on profile screen
+     */
     @IBAction func saveWeight(_ sender: Any) {
         let currentUser = PFUser.current()
         if currentUser != nil {
@@ -212,11 +238,20 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         weightSlider.isHidden = true
         saveWeight.isHidden = true
     }
+    /*
+     Makes fields available for users to change their favorite drink on their profile
+     Unhides save button
+     Hides update button
+     */
     @IBAction func updateDrink(_ sender: Any) {
         updateDrink.isHidden = true
         saveDrink.isHidden = false
         favDrinkPicker.isHidden = false
     }
+    /*
+     Hides update fields
+     Saves new favorite drink to database and changes label on profile screen
+     */
     @IBAction func saveDrink(_ sender: Any) {
         let currentUser = PFUser.current()
         if currentUser != nil {
