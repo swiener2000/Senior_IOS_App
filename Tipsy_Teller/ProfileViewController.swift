@@ -65,22 +65,31 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         }
         // Do any additional setup after loading the view.
     }
-    
+    /*
+     Function to bring user to home screen
+     */
     @IBAction func backToHome(_ sender: Any) {
         print("Button Clicked")
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home")
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
     }
+    
+    /*
+     Function that take slider value and puts into slider label
+     */
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let currentValue = Int(sender.value)
                 
         weightLabelUpdate.text = "Weight: \(currentValue) lbs"
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+    /*
+     Helper functions for the fav drink pickerView
+     */
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cocktailNames.count
     }
@@ -95,6 +104,10 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         print("Your selected row value is \(cocktailNames[row])")
         favDrink = cocktailNames[row]
     }
+    
+    /*
+     Queries database for drinks
+     */
     func queryDrinks() -> [String]{
         print("Starting Query")
         var cocktails = [String]()
@@ -131,7 +144,7 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         let newLast = updateLast.text
         firstNameLabel.text = newFirst
         lastNameLabel.text = newLast
-        var currentUser = PFUser.current()
+        let currentUser = PFUser.current()
         if currentUser != nil {
             currentUser?["First_Name"] = newFirst
             currentUser?["Last_Name"] = newLast
@@ -154,7 +167,7 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         saveGender.isHidden = false
     }
     @IBAction func saveGender(_ sender: Any) {
-        var currentUser = PFUser.current()
+        let currentUser = PFUser.current()
         if currentUser != nil {
             currentUser?["Gender"] = self.gender.selectedSegmentIndex
 
@@ -183,7 +196,7 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         saveWeight.isHidden = false
     }
     @IBAction func saveWeight(_ sender: Any) {
-        var currentUser = PFUser.current()
+        let currentUser = PFUser.current()
         if currentUser != nil {
             currentUser?["Weight"] = Int(self.weightSlider.value)
 
@@ -205,7 +218,7 @@ class ProfileViewController: UIViewController,  UIPickerViewDelegate, UIPickerVi
         favDrinkPicker.isHidden = false
     }
     @IBAction func saveDrink(_ sender: Any) {
-        var currentUser = PFUser.current()
+        let currentUser = PFUser.current()
         if currentUser != nil {
             currentUser?["FavDrink"] = self.favDrink
 
