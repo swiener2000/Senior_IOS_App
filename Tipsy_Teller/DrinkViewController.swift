@@ -18,13 +18,20 @@ extension Date {
     }
 }
 
-class DrinkViewController: UIViewController {
+class DrinkViewController: UIViewController ,  UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    
 
     @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var BACLabel: UILabel!
 
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var startStopButton: UIButton!
+
+    @IBOutlet weak var selectDrink: UIButton!
+    @IBOutlet weak var drinkPicker: UIPickerView!
+    var selectedDrink: String = "Margarita"
+    var cocktailNames: [String] = [String]()
+    
+    
     @IBOutlet weak var TimerLabel: UILabel!
     var timer:Timer = Timer()
     var count: Int = 0
@@ -57,6 +64,10 @@ class DrinkViewController: UIViewController {
         
         checkIfTimerIsRunning()
         loadProfile()
+        cocktailNames = queryDrinks()
+        self.drinkPicker.delegate = self
+        self.drinkPicker.dataSource = self
+        selectDrink.setTitle(selectedDrink, for: .normal)
         //startStopButton.setTitleColor(UIColor.green, for: .normal)
         size1Button.isHidden = true
         size2Button.isHidden = true
@@ -74,6 +85,63 @@ class DrinkViewController: UIViewController {
         if drinkCount != 0 {
             updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
         }
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cocktailNames.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        return cocktailNames[row] as String
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        print("Selected Drink: \(selectedDrink)" )
+        
+        print("Your selected row value is \(cocktailNames[row])")
+        selectedDrink = cocktailNames[row]
+        selectDrink.setTitle(selectedDrink, for: .normal)
+        
+    }
+    @IBAction func selectDrink(_ sender: Any) {
+        if drinkCount == 0 {
+            timerCounting = true
+            //startStopButton.setTitle("STOP", for: .normal)
+            //startStopButton.setTitleColor(UIColor.red, for: .normal)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        }
+        var SD = 0.0
+        let query = PFQuery(className:"Cocktails")
+        query.whereKey("Name", equalTo: selectedDrink as Any)
+        do {
+            let results = try query.findObjects()
+            let objects = results
+            for object in objects {
+                SD = object.value(forKey: "SD") as! Double
+                //print(SD)
+            }
+        } catch {
+            print(error)
+        }
+        
+        let weight = PFUser.current()?["Weight"] as? Double
+        
+        bac = bacCalc(weight: Int(weight!), r: r, drinks: SD, BAC: bac)
+        
+        let bacRounded = round(bac * 1000) / 1000.0
+        drinkCount += 1
+        BACLabel.text = "BAC: \(bacRounded)"
+        if drinkCount == 1 {
+            sendBAC()
+        } else {
+            print("Button Clicked")
+            updateBAC(username: (PFUser.current()?.username)!, BAC: bac, Date: Date() as NSDate, Drinks: drinkCount, Date2: getDate(), Count: count)
+        }
+       showAlert()
+        drivingIndicatorCheck()
     }
     /*
      Called when the button is hit
@@ -592,6 +660,29 @@ class DrinkViewController: UIViewController {
         
         drivingIndicatorCheck()
         //print(DateArray)
+    }
+    /*
+     Queries database for drinks
+     */
+    func queryDrinks() -> [String]{
+        print("Starting Query")
+        var cocktails = [String]()
+
+        let query = PFQuery(className:"Cocktails")
+        query.selectKeys(["Name"])
+        do {
+            let results: [PFObject] = try query.findObjects()
+            let objects = results
+            for object in objects {
+                let someString = object.value(forKey: "Name") as! String
+                cocktails.append(someString)
+            }
+        } catch {
+            print(error)
+        }
+        
+        print("Finished Query")
+        return cocktails
     }
     /*
      Update BAC based on the amount of time that has passed since the app was open

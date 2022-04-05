@@ -167,13 +167,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAR-rv-6o7">
-                                <rect key="frame" x="20" y="54" width="374" height="799"/>
+                                <rect key="frame" x="20" y="54" width="374" height="825"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ve-Lpc">
-                                        <rect key="frame" x="8" y="8" width="356" height="548"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ve-Lpc">
+                                        <rect key="frame" x="8" y="-8" width="356" height="761"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Bt-Fb-Yb8">
-                                                <rect key="frame" x="0.0" y="0.0" width="356" height="67"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="356" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAV-1j-sTV">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="31"/>
@@ -186,33 +186,33 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'s Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-Uw-1re">
-                                                        <rect key="frame" x="0.0" y="31" width="356" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <rect key="frame" x="0.0" y="31" width="356" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAC: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-o5-WjI">
-                                                <rect key="frame" x="0.0" y="93" width="356" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <rect key="frame" x="0.0" y="77" width="356" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-sr-usH">
-                                                <rect key="frame" x="0.0" y="154" width="356" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="126.5" width="356" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You are safe to drive!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oIA-FM-jnD">
-                                                <rect key="frame" x="0.0" y="167" width="356" height="34"/>
+                                                <rect key="frame" x="0.0" y="135" width="356" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mHg-px-f6s">
-                                                <rect key="frame" x="0.0" y="227" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="186" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss3-mT-YMb">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -249,7 +249,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-lm-UNe">
-                                                <rect key="frame" x="0.0" y="334" width="356" height="81"/>
+                                                <rect key="frame" x="0.0" y="284" width="356" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-WD-1XF">
                                                         <rect key="frame" x="0.0" y="0.0" width="74" height="81"/>
@@ -286,15 +286,26 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-Rq-rSc">
-                                                <rect key="frame" x="0.0" y="441" width="356" height="31"/>
+                                                <rect key="frame" x="0.0" y="382" width="356" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Favorite Drink"/>
                                                 <connections>
                                                     <action selector="favDrinkBac:" destination="pJi-hu-EZd" eventType="touchUpInside" id="Wm9-v3-gfs"/>
                                                 </connections>
                                             </button>
+                                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k82-xf-8fr">
+                                                <rect key="frame" x="0.0" y="430" width="356" height="216"/>
+                                            </pickerView>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8c-7D-dgm">
+                                                <rect key="frame" x="0.0" y="663" width="356" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Drink"/>
+                                                <connections>
+                                                    <action selector="selectDrink:" destination="pJi-hu-EZd" eventType="touchUpInside" id="6nJ-iS-dLA"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqq-wY-ew4">
-                                                <rect key="frame" x="0.0" y="498" width="356" height="50"/>
+                                                <rect key="frame" x="0.0" y="711" width="356" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="dQK-mq-Tdy"/>
                                                 </constraints>
@@ -308,9 +319,9 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="jZO-ve-Lpc" firstAttribute="leading" secondItem="eAR-rv-6o7" secondAttribute="leadingMargin" id="UXl-ZO-JPu"/>
-                                    <constraint firstItem="jZO-ve-Lpc" firstAttribute="top" secondItem="eAR-rv-6o7" secondAttribute="topMargin" id="YOo-8V-A2e"/>
+                                    <constraint firstItem="jZO-ve-Lpc" firstAttribute="top" secondItem="eAR-rv-6o7" secondAttribute="topMargin" constant="-16" id="YOo-8V-A2e"/>
                                     <constraint firstAttribute="trailing" secondItem="jZO-ve-Lpc" secondAttribute="trailing" constant="10" id="nQy-qA-mR2"/>
-                                    <constraint firstAttribute="bottom" secondItem="jZO-ve-Lpc" secondAttribute="bottom" constant="186" id="nuk-LA-02X"/>
+                                    <constraint firstAttribute="bottom" secondItem="jZO-ve-Lpc" secondAttribute="bottom" constant="72" id="nuk-LA-02X"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="SZB-Tg-nJZ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="nJr-73-LYt"/>
@@ -321,7 +332,7 @@
                         <constraints>
                             <constraint firstItem="eAR-rv-6o7" firstAttribute="leading" secondItem="RoS-Xi-9OV" secondAttribute="leadingMargin" id="PM4-xw-soq"/>
                             <constraint firstItem="eAR-rv-6o7" firstAttribute="trailing" secondItem="RoS-Xi-9OV" secondAttribute="trailingMargin" id="QQt-7a-LuQ"/>
-                            <constraint firstItem="3Ah-Ei-nVT" firstAttribute="bottom" secondItem="eAR-rv-6o7" secondAttribute="bottom" constant="9" id="qhq-QY-cKt"/>
+                            <constraint firstItem="3Ah-Ei-nVT" firstAttribute="bottom" secondItem="eAR-rv-6o7" secondAttribute="bottom" constant="-17" id="qhq-QY-cKt"/>
                             <constraint firstItem="eAR-rv-6o7" firstAttribute="top" secondItem="3Ah-Ei-nVT" secondAttribute="top" constant="10" id="svk-dd-fLp"/>
                         </constraints>
                     </view>
@@ -330,12 +341,14 @@
                         <outlet property="BACLabel" destination="O3f-o5-WjI" id="HMp-N8-9KY"/>
                         <outlet property="TimerLabel" destination="fqq-wY-ew4" id="QEJ-vw-WPM"/>
                         <outlet property="beerButton" destination="eHf-oz-jHW" id="rjR-qR-34s"/>
+                        <outlet property="drinkPicker" destination="k82-xf-8fr" id="L0o-iO-iFT"/>
                         <outlet property="drivingIndicator1" destination="oIA-FM-jnD" id="VCg-G1-VtV"/>
                         <outlet property="drivingIndicator2" destination="gLT-sr-usH" id="8gP-Zg-a7N"/>
                         <outlet property="favDrinkButton" destination="o5A-Rq-rSc" id="dGb-cB-FzZ"/>
                         <outlet property="liquorButton" destination="qgM-nD-9wa" id="dZs-kV-fte"/>
                         <outlet property="maltButton" destination="aay-zM-HAH" id="iGe-ml-kFw"/>
                         <outlet property="profileLabel" destination="8Ka-Uw-1re" id="avM-N0-oHw"/>
+                        <outlet property="selectDrink" destination="v8c-7D-dgm" id="tGd-Cz-ryi"/>
                         <outlet property="size1Button" destination="YhN-WD-1XF" id="gYY-ig-uxh"/>
                         <outlet property="size2Button" destination="ZmE-9t-1FJ" id="K2s-m4-9NO"/>
                         <outlet property="size3Button" destination="23r-jN-JOy" id="gj8-dA-LdW"/>
@@ -345,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meb-Uy-evw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="135"/>
+            <point key="canvasLocation" x="805.79710144927537" y="134.59821428571428"/>
         </scene>
         <!--Trends View Controller-->
         <scene sceneID="j5S-qW-lMQ">
